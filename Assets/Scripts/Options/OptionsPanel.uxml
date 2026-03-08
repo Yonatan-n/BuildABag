@@ -1,0 +1,41 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="OptionsPanel.uss" />
+
+    <ui:VisualElement name="overlay" class="overlay">
+        <ui:VisualElement name="panel" class="panel">
+
+            <!-- Title -->
+            <ui:Label text="Options" class="panel-title" />
+
+            <!-- Scrollable options list -->
+            <ui:ScrollView name="options-scroll" class="options-scroll">
+
+                <!-- Master Volume -->
+                <ui:VisualElement class="option-row">
+                    <ui:Label text="Master Volume" class="option-label" />
+                    <ui:Slider name="master-volume-slider" low-value="0" high-value="1" 
+                               value="0.5" class="option-slider" />
+                </ui:VisualElement>
+
+                <!-- SFX Volume -->
+                <ui:VisualElement class="option-row">
+                    <ui:Label text="SFX Volume" class="option-label" />
+                    <ui:Slider name="sfx-volume-slider" low-value="0" high-value="1" 
+                               value="0.5" class="option-slider" />
+                </ui:VisualElement>
+
+                <!-- Music Volume -->
+                <ui:VisualElement class="option-row">
+                    <ui:Label text="Music Volume" class="option-label" />
+                    <ui:Slider name="music-volume-slider" low-value="0" high-value="1" 
+                               value="0.5" class="option-slider" />
+                </ui:VisualElement>
+
+            </ui:ScrollView>
+
+            <!-- Close Button -->
+            <ui:Button name="close-button" text="Close" class="close-button" />
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

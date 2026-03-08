@@ -1,0 +1,97 @@
+/* Overlay — covers full screen */
+.overlay {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Panel */
+.panel {
+    width: 600px;
+    min-height: 400px;
+    max-height: 80%;
+    background-color: rgba(30, 10, 20, 0.75);
+    border-width: 2px;
+    border-color: rgb(255, 105, 180);
+    border-radius: 16px;
+    padding: 30px;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Title */
+.panel-title {
+    font-size: 32px;
+    color: rgb(255, 182, 193);
+    -unity-text-align: upper-center;
+    margin-bottom: 20px;
+}
+
+/* Scroll area */
+.options-scroll {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* Each row — label left, slider right */
+.option-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 12px 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: rgba(255, 105, 180, 0.3);
+}
+
+/* Label */
+.option-label {
+    font-size: 22px;
+    color: rgb(255, 220, 230);
+    width: 200px;
+    flex-shrink: 0;
+}
+
+/* Slider */
+.option-slider {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.option-slider .unity-slider__tracker {
+    height: 6px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-width: 0;
+}
+
+.option-slider .unity-slider__dragger {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgb(255, 105, 180);
+    border-width: 2px;
+    border-color: white;
+    top: -9px;
+}
+
+/* Close button */
+.close-button {
+    height: 56px;
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgb(255, 105, 180);
+    background-color: rgba(255, 105, 180, 0.2);
+    color: rgb(255, 220, 230);
+    font-size: 22px;
+    cursor: link;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 105, 180, 0.5);
+}
+
