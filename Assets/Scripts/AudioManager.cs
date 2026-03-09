@@ -5,9 +5,9 @@ public class AudioManager : Singleton<AudioManager>
 {
     // This value will control the master volume for the entire game (range 0 to 1)
     private AudioSource audioSource;
-    private readonly string MasterVolume = "MasterVolume";
-    private readonly string SFXVolume = "SFXVolume";
-    private readonly string MusicVolume = "MusicVolume";
+    private readonly string MasterVolumeParam = "MasterVolume";
+    private readonly string SFXVolumeParam = "SFXVolume";
+    private readonly string MusicVolumeParam = "MusicVolume";
 
     [Header("SFX clips")]
     [SerializeField] AudioClip ButtonPress;
@@ -16,13 +16,44 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioClip LevelEnd;
 
     [Header("Music Clips")]
-    [SerializeField] AudioClip Startup;
+    [SerializeField] AudioClip mainMenu;
+
+    [Header("Audio Sources")]
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioSource sfxSource;
+
     [Header("Mixer")]
     [SerializeField] AudioMixer mixer;
     [SerializeField] AudioMixerGroup musicMixerGroup;
     [SerializeField] AudioMixerGroup sfxMixerGroup;
     [SerializeField] AudioMixerGroup masterMixerGroup;
+    private float? _masterVolume;
+    public float MasterVolume
+    {
+        get => GetVolume(ref _masterVolume, PlayerData.MasterVolume);
+        set => SetVolume(ref _masterVolume, PlayerData.MasterVolume, MasterVolumeParam, value);
+    }
+    private float? _musicVolume;
+    public float MusicVolume
+    {
+        get => GetVolume(ref _musicVolume, PlayerData.MusicVolume);
+        set => SetVolume(ref _musicVolume, PlayerData.MusicVolume, MusicVolumeParam, value);
+    }
+    private float? _sfxVolume;
+    public float SfxVolume
+    {
+        get => GetVolume(ref _sfxVolume, PlayerData.SFXVolume);
+        set => SetVolume(ref _sfxVolume, PlayerData.SFXVolume, SFXVolumeParam, value);
+    }
+    private float GetVolume(ref float? cache, string key) =>
+        cache ??= PlayerData.GetFloatById(key, 0.5f);
 
+    private void SetVolume(ref float? cache, string key, string mixerParam, float value)
+    {
+        cache = value;
+        PlayerData.SetFloatById(key, value);
+        SetMixerVolume(mixerParam, value);
+    }
 
 
     public bool IsInitialized { get; private set; }
@@ -32,43 +63,31 @@ public class AudioManager : Singleton<AudioManager>
         if (Instance != this)
             return;
 
-        audioSource = GetComponent<AudioSource>();
-        audioSource.ignoreListenerPause = true;
+        musicSource.ignoreListenerPause = true;
+        sfxSource.ignoreListenerPause = true; // see if needed too
     }
     void Start()
     {
-        SetMasterVolume(null);
+        MasterVolume = MasterVolume;
+        MusicVolume = MusicVolume;
+        SfxVolume = SfxVolume;
         IsInitialized = true;
-        StartupMusic();
     }
 
-    public void Button()
+    public void Button() => PlaySFX(ButtonPress);
+
+
+    public void PlayMainMenu() => PlayMusic(mainMenu);
+
+    private void PlayMusic(AudioClip clip)
     {
-        audioSource.PlayOneShot(ButtonPress);
+        musicSource.clip = clip;
+        musicSource.Play();
     }
 
-    public void StartupMusic()
+    private void PlaySFX(AudioClip clip)
     {
-        audioSource.clip = Startup;
-        audioSource.Play();
-    }
-
-    public void SetMasterVolume(float? volume)
-    {
-        volume ??= PlayerData.GetFloatById(PlayerData.MasterVolume, 0.5f);
-        SetMixerVolume(MasterVolume, (float)volume);
-    }
-
-    public void SetMusicVolume(float? volume)
-    {
-        volume ??= PlayerData.GetFloatById(PlayerData.MusicVolume, 0.5f);
-        SetMixerVolume(MusicVolume, (float)volume);
-    }
-
-    public void SetSFXVolume(float? volume)
-    {
-        volume ??= PlayerData.GetFloatById(PlayerData.SFXVolume, 0.5f);
-        SetMixerVolume(SFXVolume, (float)volume);
+        sfxSource.PlayOneShot(clip);
     }
 
     private void SetMixerVolume(string parameter, float volume)

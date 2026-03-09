@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 3960696561761708812}
   - component: {fileID: 4217916176654354785}
   - component: {fileID: 5109056304577000184}
+  - component: {fileID: 1741861073006655922}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -222,6 +223,21 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1741861073006655922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944813788175580073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42cdd971ce9c8c4493385cea1d50cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SliderPointerUp
+  onPointerUp:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2736684983731742385
 GameObject:
   m_ObjectHideFlags: 0

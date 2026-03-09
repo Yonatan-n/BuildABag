@@ -719,6 +719,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &653127768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7472463165620471698, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+  m_PrefabInstance: {fileID: 1865008669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &792318611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,6 +1259,9 @@ MonoBehaviour:
   Quit: {fileID: 1669246950}
   CloseOptions: {fileID: 414177128}
   OptionsPanel: {fileID: 1647089228}
+  masterVolume: {fileID: 4338536802329335263}
+  musicVolume: {fileID: 653127768}
+  sfxVolume: {fileID: 958991533}
 --- !u!4 &943592479
 Transform:
   m_ObjectHideFlags: 0
@@ -1269,6 +1277,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &958991533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7472463165620471698, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+  m_PrefabInstance: {fileID: 1478614941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214402902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,6 +2327,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4338536802329335263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7472463165620471698, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+  m_PrefabInstance: {fileID: 8812883702789796390}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4667941378092626306 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1161160703781702117, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
