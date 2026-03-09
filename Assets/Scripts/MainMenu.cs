@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public static readonly string level1 = "level1";
+    public static readonly string mainMenu = "MainMenu";
 
     [SerializeField] Button Play;
     [SerializeField] Button Options;
@@ -60,12 +61,15 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    void StartLevel1()
+    static void StartLevel1()
     {
         LoadScene(level1);
     }
-
-    void LoadScene(string name)
+    public static void GoToMainMenu()
+    {
+        LoadScene(mainMenu);
+    }
+    static void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
     }

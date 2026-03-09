@@ -82,11 +82,14 @@ public class AudioManager : Singleton<AudioManager>
     private void PlayMusic(AudioClip clip)
     {
         musicSource.clip = clip;
+        musicSource.loop = true;
         musicSource.Play();
     }
 
     private void PlaySFX(AudioClip clip)
     {
+        sfxSource.velocityUpdateMode = AudioVelocityUpdateMode.Fixed;
+        sfxSource.ignoreListenerPause = true;
         sfxSource.PlayOneShot(clip);
     }
 
