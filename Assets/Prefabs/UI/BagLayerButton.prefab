@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4889422784946415817}
   - component: {fileID: 7127659057699897653}
   - component: {fileID: 3512833731893184923}
+  - component: {fileID: 4448472546656110915}
   m_Layer: 5
   m_Name: BagLayerButton
   m_TagString: Untagged
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4448472546656110915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008321427631768158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc9d1768983c1042a1a4840b10e927f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
 --- !u!1 &7934710417289146378
 GameObject:
   m_ObjectHideFlags: 0

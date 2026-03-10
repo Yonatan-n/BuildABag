@@ -63,6 +63,7 @@ public class MainMenu : MonoBehaviour
 
     static void StartLevel1()
     {
+        AudioManager.Instance.StopMainMenu();
         LoadScene(level1);
     }
     public static void GoToMainMenu()

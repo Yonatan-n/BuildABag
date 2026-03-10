@@ -78,12 +78,21 @@ public class AudioManager : Singleton<AudioManager>
 
 
     public void PlayMainMenu() => PlayMusic(mainMenu);
+    public void StopMainMenu()
+    {
+        StopMusic();
+    }
 
     private void PlayMusic(AudioClip clip)
     {
         musicSource.clip = clip;
         musicSource.loop = true;
         musicSource.Play();
+    }
+    private void StopMusic()
+    {
+        musicSource.Stop();
+
     }
 
     private void PlaySFX(AudioClip clip)

@@ -26,8 +26,8 @@ public class ColorPickerUI : MonoBehaviour
 
         hueSlider.onValueChanged.AddListener(OnHueChanged);
         hexInput.onEndEdit.AddListener(OnHexInput);
-        confirmButton.onClick.AddListener(OnConfirm);
-        closeButton.onClick.AddListener(Close);
+        confirmButton.onClick.AddListener(OnConfirm); // maybe remove
+        closeButton.onClick.AddListener(Close); // maybe remove
         svBox.gameObject.AddComponent<SVBoxClickHandler>().OnClick = OnSVBoxClick;
 
         GenerateHueSliderBackground();
@@ -35,6 +35,7 @@ public class ColorPickerUI : MonoBehaviour
         _sat = 1f;
         _val = 1f;
         RegenerateSVTexture();
+        UpdatePreview(); // to set initial values
     }
 
     public void Open(Color initialColor)
