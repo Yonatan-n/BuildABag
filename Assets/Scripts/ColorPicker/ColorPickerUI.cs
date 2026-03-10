@@ -62,7 +62,7 @@ public class ColorPickerUI : MonoBehaviour
 
         var rect = svBox.rectTransform.rect;
         _sat = Mathf.InverseLerp(rect.xMin, rect.xMax, localPoint.x);
-        _val = 1f - Mathf.InverseLerp(rect.yMin, rect.yMax, localPoint.y);
+        _val = Mathf.InverseLerp(rect.yMin, rect.yMax, localPoint.y);
 
         UpdatePreview();
     }
@@ -97,8 +97,8 @@ public class ColorPickerUI : MonoBehaviour
     {
         var color = Color.HSVToRGB(_hue, _sat, _val);
         colorPreview.color = color;
+        hueSlider.handleRect.GetComponent<Image>().color = color;
         hexInput.text = ColorUtility.ToHtmlStringRGB(color);
-        // live preview on the bag part
         ColorPickerManager.Instance.ApplyColorToSelected(color);
     }
 
