@@ -12,14 +12,14 @@ public class SelectBagLayer : MonoBehaviour
         layer0.onClick.AddListener(ColorPickerManager.Instance.SelectLayer0);
         layer1.onClick.AddListener(ColorPickerManager.Instance.SelectLayer1);
         layer2.onClick.AddListener(ColorPickerManager.Instance.SelectLayer2);
-        reset.onClick.AddListener(Reset);
-
+        reset.onClick.AddListener(OnResetButtonClicked);
         // set to layer0 on start
         ColorPickerManager.Instance.SelectLayer0();
     }
 
-    void Reset()
+    void OnResetButtonClicked()
     {
-
+        Debug.Log("inital reset");
+        ConfirmDialog.Show("Reset bag?", "All Changes will be lost forever.", onConfirm: BagManager.Instance.Reset);
     }
 }

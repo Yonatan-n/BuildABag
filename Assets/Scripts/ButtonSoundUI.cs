@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class ButtonSound : MonoBehaviour
 {
-    void Awake()
+    void Start()
     {
         GetComponent<Button>().onClick.AddListener(AudioManager.Instance.Button);
     }

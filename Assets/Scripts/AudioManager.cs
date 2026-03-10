@@ -3,8 +3,6 @@ using UnityEngine.Audio;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    // This value will control the master volume for the entire game (range 0 to 1)
-    private AudioSource audioSource;
     private readonly string MasterVolumeParam = "MasterVolume";
     private readonly string SFXVolumeParam = "SFXVolume";
     private readonly string MusicVolumeParam = "MusicVolume";
