@@ -2265,6 +2265,7 @@ MonoBehaviour:
   panel: {fileID: 663533890}
   svBox: {fileID: 1358550722}
   hueSlider: {fileID: 1291365750}
+  hueSliderBackground: {fileID: 263850455}
   colorPreview: {fileID: 1885956173}
   hexInput: {fileID: 513613541}
   confirmButton: {fileID: 424842162}
@@ -4007,15 +4008,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 90d48e0f9b1ef2a439d54222499fefc4, type: 2}
-  m_sharedMaterial: {fileID: -4745934964498631514, guid: 90d48e0f9b1ef2a439d54222499fefc4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4418,7 +4419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1612138625
 RectTransform:
   m_ObjectHideFlags: 0

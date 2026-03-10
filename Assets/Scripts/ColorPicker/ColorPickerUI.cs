@@ -8,6 +8,7 @@ public class ColorPickerUI : MonoBehaviour
     [SerializeField] GameObject panel;
     [SerializeField] RawImage svBox;
     [SerializeField] Slider hueSlider;
+    [SerializeField] Image hueSliderBackground;
     [SerializeField] Image colorPreview;
     [SerializeField] TMP_InputField hexInput;
     [SerializeField] Button confirmButton;
@@ -21,11 +22,7 @@ public class ColorPickerUI : MonoBehaviour
     {
         _svTexture = new Texture2D(TextureSize, TextureSize);
         svBox.texture = _svTexture;
-        // initialize
-        _hue = 0f;
-        _sat = 1f;
-        _val = 1f;
-        RegenerateSVTexture();
+
 
         hueSlider.onValueChanged.AddListener(OnHueChanged);
         hexInput.onEndEdit.AddListener(OnHexInput);
@@ -33,6 +30,11 @@ public class ColorPickerUI : MonoBehaviour
         closeButton.onClick.AddListener(Close);
         svBox.gameObject.AddComponent<SVBoxClickHandler>().OnClick = OnSVBoxClick;
 
+        GenerateHueSliderBackground();
+        _hue = 0f;
+        _sat = 1f;
+        _val = 1f;
+        RegenerateSVTexture();
     }
 
     public void Open(Color initialColor)
@@ -91,6 +93,26 @@ public class ColorPickerUI : MonoBehaviour
             }
         }
         _svTexture.Apply();
+    }
+
+    void GenerateHueSliderBackground()
+    {
+        int width = 256;
+        int height = 1;
+        Texture2D hueTexture = new(width, height);
+
+        for (int x = 0; x < width; x++)
+        {
+            float h = (float)x / width;
+            hueTexture.SetPixel(x, 0, Color.HSVToRGB(h, 1f, 1f));
+        }
+        hueTexture.Apply();
+
+        hueSliderBackground.sprite = Sprite.Create(
+            hueTexture,
+            new Rect(0, 0, width, height),
+            new Vector2(0.5f, 0.5f)
+        );
     }
 
     void UpdatePreview()
