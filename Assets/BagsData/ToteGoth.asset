@@ -17,6 +17,16 @@ MonoBehaviour:
   variants:
   - variantName: Goth01
     thumbnail: {fileID: 0}
+    baseLayer: {fileID: 7473098698446347309, guid: 53b3aff3cc88d594c935b435e2ad20d2, type: 3}
+    accentLayer: {fileID: 186903031356570855, guid: 7f38263cd2ad67840a8f4fa2719c53df, type: 3}
+    zipperLayer: {fileID: 21300000, guid: 133b8562a1cf4db4cb89c5b4078b4603, type: 3}
+  - variantName: Goth02
+    thumbnail: {fileID: 0}
     baseLayer: {fileID: 7473098698446347309, guid: d4bbb5b7ea7c53746997e835729f1744, type: 3}
-    accentLayer: {fileID: 8892176561488945410, guid: a56c1fe691ff0cf4bacc7239cbaca224, type: 3}
-    zipperLayer: {fileID: 2816159342685617825, guid: 30b9aa9bb3c7a49489ce63d37a2f6bf1, type: 3}
+    accentLayer: {fileID: 186903031356570855, guid: 7f38263cd2ad67840a8f4fa2719c53df, type: 3}
+    zipperLayer: {fileID: 21300000, guid: 133b8562a1cf4db4cb89c5b4078b4603, type: 3}
+  - variantName: Goth03
+    thumbnail: {fileID: 0}
+    baseLayer: {fileID: -4676568142202828671, guid: 94d967f3e228dcd49a9657d79b3f686a, type: 3}
+    accentLayer: {fileID: 186903031356570855, guid: 7f38263cd2ad67840a8f4fa2719c53df, type: 3}
+    zipperLayer: {fileID: 21300000, guid: 133b8562a1cf4db4cb89c5b4078b4603, type: 3}

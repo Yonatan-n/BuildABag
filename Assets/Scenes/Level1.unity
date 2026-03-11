@@ -1962,6 +1962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8569411511665252821, guid: ff24ba29ac53e1345bd3713a1e8dd80b, type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 8300000, guid: 81e06dd769ab1c941aff2387a436d3dc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2855,7 +2859,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -30, y: -25.21}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869753093
 MonoBehaviour:
