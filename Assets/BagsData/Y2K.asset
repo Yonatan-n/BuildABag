@@ -16,7 +16,7 @@ MonoBehaviour:
   thumbnail: {fileID: 0}
   variants:
   - variantName: Y2K01
-    thumbnail: {fileID: 0}
+    theme: 3
     baseLayer: {fileID: 6478344822416764997, guid: 8238279960843d54ea86ee40a2d0e990, type: 3}
     accentLayer: {fileID: 4984389329012573311, guid: e68765e474212e8428b9d77a3cc2b280, type: 3}
     zipperLayer: {fileID: -4722274115406913510, guid: 35af61f8504d64c488e6005a39e494f8, type: 3}

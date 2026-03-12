@@ -5,7 +5,7 @@ using UnityEngine;
 public class BagVariant
 {
     public string variantName;
-    public Sprite thumbnail;
+    public BagTheme theme;
     public Sprite baseLayer;
     public Sprite accentLayer;
     public Sprite zipperLayer;

@@ -8,12 +8,16 @@ public class GameManager : SingletonPerScene<GameManager>
 {
 
     [SerializeField] Button Submit;
+    [SerializeField] Button Next;
+    [SerializeField] Button Prev;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] TextMeshProUGUI NoteCustomer;
     [SerializeField] TextMeshProUGUI NoteTheme;
     [SerializeField] TextMeshProUGUI NoteLike;
     [SerializeField] TextMeshProUGUI NoteHate;
     [SerializeField] ParticleSystem confettiParticles;
+    [SerializeField] GameObject LayersGroup;
+
 
     int TotalMoney;
     List<OrderRequest> orderRequests;
@@ -52,45 +56,69 @@ public class GameManager : SingletonPerScene<GameManager>
             },
         };
         TotalMoney = 0;
-        GetNewOrder();
         if (!GameOver)
         {
+            StartCoroutine(SubmitHandler());
             moneyText.text = $"Money {TotalMoney}$";
-            Submit.onClick.AddListener(SubmitHandler);
+            Submit.onClick.AddListener(() => StartCoroutine(SubmitHandler()));
         }
     }
-    void GetNewOrder()
+    IEnumerator GetNewOrder()
     {
-        if (GameOver) { return; }
+        if (GameOver) { yield return null; }
 
         if (orderRequestIndex >= orderRequests.Count)
         {
             GameOver = true;
             MainMenu.GoToCompleted();
-            return;
+            yield return null;
         }
 
         currentOrderRequest = orderRequests[orderRequestIndex];
         orderRequestIndex++;
-        SetNoteText();
+        yield return SetNoteText();
     }
-    void SubmitHandler()
+
+    void SetButtonsInteract(bool value)
     {
-        // calculate money, load next bag
-        confettiParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-        confettiParticles.Play();
-        // TODO: fade bag to black
-        CalculateOrderValue();
-        GetNewOrder();
+        Submit.interactable = value;
+        Next.interactable = value;
+        Prev.interactable = value;
+    }
+    IEnumerator SubmitHandler()
+    {
+        SetButtonsInteract(false);
         AudioManager.Instance.PlaySubmit();
-        Debug.Log("submit");
+        confettiParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        if (!isFirstOrder) confettiParticles.Play();
+        yield return FadeOut(instant: isFirstOrder);
+        // calculate money, load next bag
+        if (!isFirstOrder)
+        {
+            CalculateOrderValue();
+        }
+        yield return GetNewOrder();
+        yield return FadeIn();
+        AudioManager.Instance.PlayBubble();
+        SetButtonsInteract(true);
+        yield return null;
     }
 
     void CalculateOrderValue()
     {
-        TotalMoney += 100;
+        var varient = BagManager.Instance.CurrentBag.variants[0]; // always the first for now
+        if (varient.theme == currentOrderRequest.theme)
+        {
+            TotalMoney += 100;
+            // play pleaser
+        }
+        else
+        {
+            TotalMoney += 50;
+            // play meduim
+        }
+        AudioManager.Instance.PlayMoney();
         moneyText.text = $"Money {TotalMoney}$";
-
         // TODO: implement
     }
 
@@ -99,7 +127,7 @@ public class GameManager : SingletonPerScene<GameManager>
         Init();
     }
 
-    void SetNoteText()
+    IEnumerator SetNoteText()
     {
         if (isFirstOrder)
         {
@@ -107,12 +135,12 @@ public class GameManager : SingletonPerScene<GameManager>
             NoteTheme.text = "";
             NoteLike.text = "";
             NoteHate.text = "";
-            StartCoroutine(TypeAllRoutine());
             isFirstOrder = false;
+            return TypeAllRoutine();
         }
         else
         {
-            StartCoroutine(StrikeThenTypeAll());
+            return StrikeThenTypeAll();
         }
     }
 
@@ -190,5 +218,39 @@ public class GameManager : SingletonPerScene<GameManager>
 
         textComponent.text = "";
         textComponent.color = original; // reset alpha for typing
+    }
+
+    IEnumerator FadeOut(float duration = 0.5f, bool instant = false)
+    {
+        var images = LayersGroup.GetComponentsInChildren<Image>();
+        if (instant)
+        {
+            foreach (var img in images)
+                img.color = new Color(img.color.r, img.color.g, img.color.b, 0f);
+            yield break;
+        }
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+            foreach (var img in images)
+                img.color = new Color(img.color.r, img.color.g, img.color.b, alpha);
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeIn(float duration = 0.5f)
+    {
+        var images = LayersGroup.GetComponentsInChildren<Image>();
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, elapsed / duration);
+            foreach (var img in images)
+                img.color = new Color(img.color.r, img.color.g, img.color.b, alpha);
+            yield return null;
+        }
     }
 }

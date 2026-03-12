@@ -41,7 +41,7 @@ public class ColorPickerUI : MonoBehaviour
 
     public void SetRandomColor()
     {
-        Color randomColor = Random.ColorHSV(0.8f, 1f, 0.3f, 0.8f, 0.3f, 0.8f); // avoids too dark and too brights
+        Color randomColor = Random.ColorHSV(0.2f, 0.9f, 0.2f, 0.9f, 0.2f, 0.9f); // avoids too dark and too brights
         Color.RGBToHSV(randomColor, out _hue, out _sat, out _val);
         hueSlider.value = _hue;
     }
@@ -67,7 +67,7 @@ public class ColorPickerUI : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             svBox.rectTransform,
             screenPosition,
-            null,
+            Camera.main,
             out Vector2 localPoint
         );
 

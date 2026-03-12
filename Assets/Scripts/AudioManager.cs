@@ -92,6 +92,8 @@ public class AudioManager : Singleton<AudioManager>
     public void PlaySubmit() => PlaySFX(Submit);
     public void PlayBubble() => PlaySFX(BubblePop);
     public void PlayLevelEnd() => PlaySFX(LevelEnd);
+    public void PlayMoney() => PlaySFX(CashRegister);
+
     public void PlayScribble()
     {
         sfxSource.clip = PenScribble;
@@ -103,6 +105,7 @@ public class AudioManager : Singleton<AudioManager>
         sfxSource.loop = false;
         sfxSource.Stop();
     }
+
 
     public void PlayMainMenu() => PlayMusic(mainMenu);
 
