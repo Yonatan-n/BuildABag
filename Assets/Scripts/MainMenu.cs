@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
         sfxKnob.onValueChanged.AddListener(v => AudioManager.Instance.SfxVolume = v);
 
         sfxKnob.GetComponent<SliderPointerUp>().onPointerUp.AddListener(() => AudioManager.Instance.Button());
-        AudioManager.Instance.PlayMainMenu();
+        // AudioManager.Instance.PlayMainMenu();
     }
 
     void CloseOptionsHandler()
@@ -65,18 +65,18 @@ public class MainMenu : MonoBehaviour
 
     static void StartLevel1()
     {
-        AudioManager.Instance.StopTrack();
+        // AudioManager.Instance.StopTrack();
         LoadScene(level1);
     }
     public static void GoToMainMenu()
     {
-        AudioManager.Instance.StopTrack();
+        // AudioManager.Instance.StopTrack();
         LoadScene(mainMenu);
     }
 
     public static void GoToCompleted()
     {
-        AudioManager.Instance.StopTrack();
+        // AudioManager.Instance.StopTrack();
         GameManager.Instance.GameOver = true;
         LoadScene(Completed);
     }

@@ -88,6 +88,7 @@ public class AudioManager : Singleton<AudioManager>
         MusicVolume = MusicVolume;
         SfxVolume = SfxVolume;
         IsInitialized = true;
+        PlayMainMenu(); // loop all the time for now
     }
 
     public void Button() => PlaySFX(ButtonPress);
@@ -97,7 +98,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayMainMenu() => PlayMusic(mainMenu);
 
-
+    // not used yet
     public void StopTrack()
     {
         StopMusic();
@@ -109,6 +110,7 @@ public class AudioManager : Singleton<AudioManager>
         musicSource.loop = true;
         musicSource.Play();
     }
+    // not used yet
     private void StopMusic()
     {
         musicSource.Stop();

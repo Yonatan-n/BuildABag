@@ -945,8 +945,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292739245
-  m_fontColor: {r: 0.6777188, g: 0, b: 0.87169814, a: 1}
+    rgba: 4292306622
+  m_fontColor: {r: 0.74373376, g: 0.3985261, b: 0.8415094, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1962,6 +1962,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8569411511665252821, guid: ff24ba29ac53e1345bd3713a1e8dd80b, type: 3}
+      propertyPath: Pause
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569411511665252821, guid: ff24ba29ac53e1345bd3713a1e8dd80b, type: 3}
+      propertyPath: LevelEnd
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569411511665252821, guid: ff24ba29ac53e1345bd3713a1e8dd80b, type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 8300000, guid: eb0004c0ebfdf954795bff6787d31da3, type: 3}
+    - target: {fileID: 8569411511665252821, guid: ff24ba29ac53e1345bd3713a1e8dd80b, type: 3}
+      propertyPath: ButtonPress
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d933a15520f9a4478aa71299ad84189, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

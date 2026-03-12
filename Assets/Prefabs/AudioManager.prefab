@@ -47,9 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   ButtonPress: {fileID: 8300000, guid: 61cab84ce466e93449954eee557665af, type: 3}
+  ButtonPressLong: {fileID: 0}
+  ButtonDownUp: {fileID: 0}
   Pause: {fileID: 8300000, guid: 61cab84ce466e93449954eee557665af, type: 3}
-  LevelStart: {fileID: 8300000, guid: 61cab84ce466e93449954eee557665af, type: 3}
+  LevelStart: {fileID: 8300000, guid: eb0004c0ebfdf954795bff6787d31da3, type: 3}
   LevelEnd: {fileID: 8300000, guid: 61cab84ce466e93449954eee557665af, type: 3}
+  Submit: {fileID: 0}
+  Bell: {fileID: 0}
+  CashRegister: {fileID: 0}
+  AddCash: {fileID: 0}
+  PenScribble: {fileID: 0}
+  Swoosh: {fileID: 0}
+  BubblePop: {fileID: 0}
+  TimesUp: {fileID: 0}
   mainMenu: {fileID: 8300000, guid: 2a2bd3d76761d544cb4b69e9e8eeda48, type: 3}
   musicSource: {fileID: 1608221860415225848}
   sfxSource: {fileID: 6307789031432991896}
