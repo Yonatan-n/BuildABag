@@ -19,8 +19,16 @@ public class ConfirmDialog : MonoBehaviour
         panel.SetActive(false);
     }
 
-    public static void Show(string title, string message, Action onConfirm)
+    public static void Show(string title, string message, Action onConfirm, bool backToMenu = false)
     {
+        if (backToMenu)
+        {
+            var img = Instance.confirmButton.GetComponent<Image>();
+            var text = Instance.confirmButton.GetComponentInChildren<TextMeshProUGUI>();
+            text.text = "Done!";
+            img.color = Color.green;
+            Instance.cancelButton.gameObject.SetActive(false);
+        }
         Instance.titleText.text = title;
         Instance.messageText.text = message;
         Instance.panel.SetActive(true);

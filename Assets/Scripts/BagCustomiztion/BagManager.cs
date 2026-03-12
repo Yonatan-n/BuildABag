@@ -70,3 +70,13 @@ public class BagManager : Singleton<BagManager>
     }
 
 }
+
+
+// TODO:
+// stickers drag and drop
+// get request note
+// submit
+// score
+// history
+// timer
+// next level (new sound, new background, new bags

@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: e68765e474212e8428b9d77a3cc2b280
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4984389329012573311
+    second: Patch_Y2K_01_0
+  - first:
+      213: -7666772882228904811
+    second: Patch_Y2K_01_1
+  - first:
+      213: 5297861889301448855
+    second: Patch_Y2K_01_2
+  - first:
+      213: 3799486203328127500
+    second: Patch_Y2K_01_3
+  - first:
+      213: 1995800021131725935
+    second: Patch_Y2K_01_4
+  - first:
+      213: 853699583521128482
+    second: Patch_Y2K_01_5
+  - first:
+      213: -8786278633127096463
+    second: Patch_Y2K_01_6
+  - first:
+      213: -3300664998927919224
+    second: Patch_Y2K_01_7
+  - first:
+      213: 4874412870952856581
+    second: Patch_Y2K_01_8
+  - first:
+      213: -2325223190776943879
+    second: Patch_Y2K_01_9
+  - first:
+      213: 3739263119031210181
+    second: Patch_Y2K_01_10
+  - first:
+      213: 631971178535051750
+    second: Patch_Y2K_01_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Patch_Y2K_01_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 65
+        width: 399
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74ca02bfab1c2540800000000000000
+      internalID: 4984389329012573311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 392
+        width: 29
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59cf5251fa62a9590800000000000000
+      internalID: -7666772882228904811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_2
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 386
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79884eca159c58940800000000000000
+      internalID: 5297861889301448855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_3
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 380
+        width: 12
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c02ee56429c7ab430800000000000000
+      internalID: 3799486203328127500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_4
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 204
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c06468b8182bb10800000000000000
+      internalID: 1995800021131725935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_5
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 168
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2200da48f33f8db00800000000000000
+      internalID: 853699583521128482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_6
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 183
+        width: 39
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fcad6822ed01680800000000000000
+      internalID: -8786278633127096463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_7
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 187
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8871650dbaea132d0800000000000000
+      internalID: -3300664998927919224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 151
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50cacbd2ea465a340800000000000000
+      internalID: 4874412870952856581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_9
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 151
+        width: 40
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa6d3ad3d52bbfd0800000000000000
+      internalID: -2325223190776943879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_10
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 50
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0139bcef784e330800000000000000
+      internalID: 3739263119031210181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K_01_11
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 52
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1edd4407635c800800000000000000
+      internalID: 631971178535051750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Patch_Y2K_01_0: 4984389329012573311
+      Patch_Y2K_01_1: -7666772882228904811
+      Patch_Y2K_01_10: 3739263119031210181
+      Patch_Y2K_01_11: 631971178535051750
+      Patch_Y2K_01_2: 5297861889301448855
+      Patch_Y2K_01_3: 3799486203328127500
+      Patch_Y2K_01_4: 1995800021131725935
+      Patch_Y2K_01_5: 853699583521128482
+      Patch_Y2K_01_6: -8786278633127096463
+      Patch_Y2K_01_7: -3300664998927919224
+      Patch_Y2K_01_8: 4874412870952856581
+      Patch_Y2K_01_9: -2325223190776943879
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

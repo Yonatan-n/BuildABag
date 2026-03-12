@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class ColorPickerUI : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class ColorPickerUI : MonoBehaviour
     private Texture2D _svTexture;
     private const int TextureSize = 128;
 
-    void Awake()
+    void Start()
     {
         _svTexture = new Texture2D(TextureSize, TextureSize);
         svBox.texture = _svTexture;
@@ -84,6 +85,8 @@ public class ColorPickerUI : MonoBehaviour
 
     void RegenerateSVTexture()
     {
+        if (_svTexture == null) _svTexture = new Texture2D(256, 256, TextureFormat.RGB24, false);
+
         for (int y = 0; y < TextureSize; y++)
         {
             for (int x = 0; x < TextureSize; x++)

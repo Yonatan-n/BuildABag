@@ -15,6 +15,11 @@ MonoBehaviour:
   bagName: Tote
   thumbnail: {fileID: 0}
   variants:
+  - variantName: Goth04
+    thumbnail: {fileID: 0}
+    baseLayer: {fileID: 3555997116161664316, guid: 3756cb892a05ba14e8ee5faff972abf1, type: 3}
+    accentLayer: {fileID: 186903031356570855, guid: 7f38263cd2ad67840a8f4fa2719c53df, type: 3}
+    zipperLayer: {fileID: 21300000, guid: 133b8562a1cf4db4cb89c5b4078b4603, type: 3}
   - variantName: Goth01
     thumbnail: {fileID: 0}
     baseLayer: {fileID: 7473098698446347309, guid: 53b3aff3cc88d594c935b435e2ad20d2, type: 3}

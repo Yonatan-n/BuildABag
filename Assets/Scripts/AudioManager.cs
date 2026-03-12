@@ -12,6 +12,7 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioClip Pause;
     [SerializeField] AudioClip LevelStart;
     [SerializeField] AudioClip LevelEnd;
+    [SerializeField] AudioClip Submit;
 
     [Header("Music Clips")]
     [SerializeField] AudioClip mainMenu;
@@ -73,6 +74,7 @@ public class AudioManager : Singleton<AudioManager>
     }
 
     public void Button() => PlaySFX(ButtonPress);
+    public void PlaySubmit() => PlaySFX(Submit);
 
 
     public void PlayMainMenu() => PlayMusic(mainMenu);
