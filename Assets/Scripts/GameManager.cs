@@ -13,6 +13,8 @@ public class GameManager : SingletonPerScene<GameManager>
     [SerializeField] TextMeshProUGUI NoteTheme;
     [SerializeField] TextMeshProUGUI NoteLike;
     [SerializeField] TextMeshProUGUI NoteHate;
+    [SerializeField] ParticleSystem confettiParticles;
+
     int TotalMoney;
     List<OrderRequest> orderRequests;
     OrderRequest currentOrderRequest;
@@ -75,6 +77,9 @@ public class GameManager : SingletonPerScene<GameManager>
     void SubmitHandler()
     {
         // calculate money, load next bag
+        confettiParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        confettiParticles.Play();
+        // TODO: fade bag to black
         CalculateOrderValue();
         GetNewOrder();
         AudioManager.Instance.PlaySubmit();
