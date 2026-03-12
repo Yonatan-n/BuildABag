@@ -112,6 +112,8 @@ public class GameManager : SingletonPerScene<GameManager>
         if (orderRequestIndex >= orderRequests.Count)
         {
             GameOver = true;
+            Score.Instance.BagCount = orderRequests.Count;
+            Score.Instance.TotalMoney = TotalMoney;
             MainMenu.GoToCompleted();
             yield return null;
         }
