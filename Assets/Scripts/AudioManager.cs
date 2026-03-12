@@ -9,10 +9,27 @@ public class AudioManager : Singleton<AudioManager>
 
     [Header("SFX clips")]
     [SerializeField] AudioClip ButtonPress;
+    [SerializeField] AudioClip ButtonPressLong;
+    [SerializeField] AudioClip ButtonDownUp;
+
+
     [SerializeField] AudioClip Pause;
     [SerializeField] AudioClip LevelStart;
     [SerializeField] AudioClip LevelEnd;
     [SerializeField] AudioClip Submit;
+    [SerializeField] AudioClip Bell;
+
+    [SerializeField] AudioClip CashRegister;
+
+    [SerializeField] AudioClip AddCash;
+
+    [SerializeField] AudioClip PenScribble;
+
+    [SerializeField] AudioClip Swoosh;
+
+    [SerializeField] AudioClip BubblePop;
+
+    [SerializeField] AudioClip TimesUp;
 
     [Header("Music Clips")]
     [SerializeField] AudioClip mainMenu;
