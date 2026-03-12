@@ -92,6 +92,17 @@ public class AudioManager : Singleton<AudioManager>
     public void PlaySubmit() => PlaySFX(Submit);
     public void PlayBubble() => PlaySFX(BubblePop);
     public void PlayLevelEnd() => PlaySFX(LevelEnd);
+    public void PlayScribble()
+    {
+        sfxSource.clip = PenScribble;
+        sfxSource.loop = true;
+        sfxSource.Play();
+    }
+    public void StopScribble()
+    {
+        sfxSource.loop = false;
+        sfxSource.Stop();
+    }
 
     public void PlayMainMenu() => PlayMusic(mainMenu);
 

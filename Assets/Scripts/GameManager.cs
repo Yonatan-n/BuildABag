@@ -113,10 +113,12 @@ public class GameManager : SingletonPerScene<GameManager>
 
     IEnumerator TypeAllRoutine()
     {
+        AudioManager.Instance.PlayScribble();
         yield return TypeRoutine(NoteCustomer, $"Customer: {currentOrderRequest.customerName}");
         yield return TypeRoutine(NoteTheme, $"Theme: {currentOrderRequest.theme}");
         yield return TypeRoutine(NoteLike, $"Loves: {currentOrderRequest.LoveText}");
         yield return TypeRoutine(NoteHate, $"Hates: {currentOrderRequest.HateText}");
+        AudioManager.Instance.StopScribble();
     }
 
     IEnumerator StrikeAllRoutine()
