@@ -11,9 +11,6 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioClip ButtonPress;
     [SerializeField] AudioClip ButtonPressLong;
     [SerializeField] AudioClip ButtonDownUp;
-
-
-    [SerializeField] AudioClip Pause;
     [SerializeField] AudioClip LevelStart;
     [SerializeField] AudioClip LevelEnd;
     [SerializeField] AudioClip Submit;

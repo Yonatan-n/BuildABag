@@ -7,12 +7,12 @@ public class BagManager : Singleton<BagManager>
     [SerializeField] Image layer1;
     [SerializeField] Image layer2;
     [SerializeField] BagCollection collection;
+    [SerializeField] ColorPickerUI colorPicker;
 
     [Header("Buttons")]
     [SerializeField] Button Left;
     [SerializeField] Button Right;
     [SerializeField] Button ResetButton;
-
     private int _currentIndex = 0;
     private BagVariant _currentVariant;
 
@@ -57,7 +57,9 @@ public class BagManager : Singleton<BagManager>
         layer2.sprite = _currentVariant.zipperLayer;
 
         // reset colors on bag change too
-        layer0.color = Color.white;
+        colorPicker.SetRandomColor();
+        // layer0.color = Color.white;
+        // reset trinkets for now
         layer1.color = Color.white;
         layer2.color = Color.white;
     }
@@ -78,5 +80,4 @@ public class BagManager : Singleton<BagManager>
 // submit
 // score
 // history
-// timer
 // next level (new sound, new background, new bags

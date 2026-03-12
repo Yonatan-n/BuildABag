@@ -7,16 +7,12 @@ public class GameManager : SingletonPerScene<GameManager>
 {
 
     [SerializeField] Button Submit;
-    [SerializeField] ConfirmDialog Dialog;
-    [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] TextMeshProUGUI NoteCustomer;
     [SerializeField] TextMeshProUGUI NoteTheme;
     [SerializeField] TextMeshProUGUI NoteLike;
     [SerializeField] TextMeshProUGUI NoteHate;
-    float timeRemaining = 180f; // seconds
     int TotalMoney;
-    private bool timerRunning;
     List<OrderRequest> orderRequests;
     OrderRequest currentOrderRequest;
     int orderRequestIndex = 0;
@@ -52,7 +48,6 @@ public class GameManager : SingletonPerScene<GameManager>
             },
         };
         TotalMoney = 0;
-        timerRunning = true;
         GetNewOrder();
         if (!GameOver)
         {
@@ -68,10 +63,8 @@ public class GameManager : SingletonPerScene<GameManager>
         {
             GameOver = true;
             MainMenu.GoToCompleted();
-            // ConfirmDialog.Show("Completed!", "Back to main menu.", onConfirm: MainMenu.GoToMainMenu, backToMenu: true);
             return;
         }
-
 
         currentOrderRequest = orderRequests[orderRequestIndex];
         orderRequestIndex++;
@@ -97,43 +90,6 @@ public class GameManager : SingletonPerScene<GameManager>
     void Start()
     {
         Init();
-    }
-
-    void DisplayTime(float time)
-    {
-        int minutes = Mathf.FloorToInt(time / 60);
-        int seconds = Mathf.FloorToInt(time % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
-
-    void OnTimerEnd()
-    {
-        // load end level screen
-        Debug.Log("time is up");
-    }
-    void Update()
-    {
-        if (!GameOver)
-        {
-            UpdateTimer();
-        }
-    }
-
-    private void UpdateTimer()
-    {
-        if (!timerRunning) return;
-        if (timeRemaining > 0)
-        {
-            timeRemaining -= Time.deltaTime;
-            DisplayTime(timeRemaining);
-        }
-        else
-        {
-            timeRemaining = 0;
-            timerRunning = false;
-            DisplayTime(0);
-            OnTimerEnd();
-        }
     }
 
     void SetNoteText()

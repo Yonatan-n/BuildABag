@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class ColorPickerUI : MonoBehaviour
 {
@@ -23,8 +22,6 @@ public class ColorPickerUI : MonoBehaviour
     {
         _svTexture = new Texture2D(TextureSize, TextureSize);
         svBox.texture = _svTexture;
-
-
         hueSlider.onValueChanged.AddListener(OnHueChanged);
         hexInput.onEndEdit.AddListener(OnHexInput);
         confirmButton.onClick.AddListener(OnConfirm); // maybe remove
@@ -32,11 +29,21 @@ public class ColorPickerUI : MonoBehaviour
         svBox.gameObject.AddComponent<SVBoxClickHandler>().OnClick = OnSVBoxClick;
 
         GenerateHueSliderBackground();
-        _hue = 0f;
-        _sat = 1f;
-        _val = 1f;
+        // Set random initial color
+        SetRandomColor();
+        // _hue = 0f;
+        // _sat = 1f;
+        // _val = 1f;
         RegenerateSVTexture();
         UpdatePreview(); // to set initial values
+    }
+
+
+    public void SetRandomColor()
+    {
+        Color randomColor = Random.ColorHSV(0.8f, 1f, 0.3f, 0.8f, 0.3f, 0.8f); // avoids too dark and too brights
+        Color.RGBToHSV(randomColor, out _hue, out _sat, out _val);
+        hueSlider.value = _hue;
     }
 
     public void Open(Color initialColor)
