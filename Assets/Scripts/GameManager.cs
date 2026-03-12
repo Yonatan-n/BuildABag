@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,31 +31,72 @@ public class GameManager : SingletonPerScene<GameManager>
     {
         orderRequests = new List<OrderRequest>()
         {
+            // goth
             new() {
                 theme = BagTheme.Goth,
-                customerName = "Gotty",
+                customerName = "Astrid",
                 LoveText = "Metal",
-                HateText="Bright Colors",
-                lovedTrinkets = new List<TrinketType> { TrinketType.Metal, TrinketType.Keychain },
-                hatedTrinkets = new List<TrinketType> { TrinketType.Sticker },
+                HateText="Green and Yellow",
             },
             new() {
-                theme = BagTheme.Girly,
-                customerName = "Pinka",
-                LoveText = "Pink",
-                HateText="Skulls, Darkness",
-                lovedTrinkets = new List<TrinketType> { TrinketType.Sticker, TrinketType.Cloth},
-                hatedTrinkets = new List<TrinketType> { TrinketType.Metal, TrinketType.Keychain },
+                theme = BagTheme.Goth,
+                customerName = "Lilith",
+                LoveText = "Darkness",
+                HateText="Logos and Icons",
             },
-          new() {
+            new() {
+                theme = BagTheme.Goth,
+                customerName = "Bianca",
+                LoveText = "Skulls",
+                HateText="Pink and Purple",
+            },
+            new() {
+                theme = BagTheme.Goth,
+                customerName = "Elsa",
+                LoveText = "Gray and Blue",
+                HateText="Yellow and Red",
+            },
+            // sportsy
+            new() {
+                theme = BagTheme.Sportsy,
+                customerName = "Katie",
+                LoveText = "Pink and Trinkets",
+                HateText="Skulls, Darkness",
+            },
+            new() {
+                theme = BagTheme.Sportsy,
+                customerName = "Sportina",
+                LoveText = "Blue and Keychains",
+                HateText="Pink and Cigarettes",
+            },
+            new() {
+                theme = BagTheme.Sportsy,
+                customerName = "Rona Marathona",
+                LoveText = "Running. FAST.",
+                HateText="Dark colors",
+            },
+            // Y2K
+            new() {
                 theme = BagTheme.Y2K,
                 customerName = "Britney B.",
                 LoveText = "Bright Colors, random items",
                 HateText="Metal",
-                lovedTrinkets = new List<TrinketType> { TrinketType.Sticker, TrinketType.Keychain, TrinketType.Cloth },
-                hatedTrinkets = new List<TrinketType> { TrinketType.Metal },
+            },
+            new() {
+                theme = BagTheme.Y2K,
+                customerName = "Abril Lebin",
+                LoveText = "Pink and Black",
+                HateText="Green and Yellow",
+            },
+            new() {
+                theme = BagTheme.Y2K,
+                customerName = "Veyonse",
+                LoveText = "Purple",
+                HateText="White and Gray",
             },
         };
+        // shuffle the list
+        orderRequests = orderRequests.OrderBy(_ => Random.Range(0, int.MaxValue)).ToList();
         TotalMoney = 0;
         if (!GameOver)
         {
@@ -109,19 +151,19 @@ public class GameManager : SingletonPerScene<GameManager>
         var varient = BagManager.Instance.CurrentBag.variants[0]; // always the first for now
         if (varient.theme == currentOrderRequest.theme)
         {
+            AudioManager.Instance.PlayPleased();
             TotalMoney += 100;
-            // play pleaser
         }
         else
         {
+            AudioManager.Instance.PlayMedium();
             TotalMoney += 50;
-            // play meduim
         }
-        AudioManager.Instance.PlayMoney();
+        Invoke(nameof(PlayMoneySFX), 0.8f);
         moneyText.text = $"Money {TotalMoney}$";
         // TODO: implement
     }
-
+    void PlayMoneySFX() => AudioManager.Instance.PlayMoney();
     void Start()
     {
         Init();

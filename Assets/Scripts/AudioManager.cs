@@ -15,18 +15,16 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioClip LevelEnd;
     [SerializeField] AudioClip Submit;
     [SerializeField] AudioClip Bell;
-
     [SerializeField] AudioClip CashRegister;
-
     [SerializeField] AudioClip AddCash;
-
     [SerializeField] AudioClip PenScribble;
-
     [SerializeField] AudioClip Swoosh;
-
     [SerializeField] AudioClip BubblePop;
-
     [SerializeField] AudioClip TimesUp;
+
+    [Header("Voices Clips")]
+    [SerializeField] AudioClip[] medium;
+    [SerializeField] AudioClip[] pleased;
 
     [Header("Music Clips")]
     [SerializeField] AudioClip mainMenu;
@@ -93,6 +91,19 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayBubble() => PlaySFX(BubblePop);
     public void PlayLevelEnd() => PlaySFX(LevelEnd);
     public void PlayMoney() => PlaySFX(CashRegister);
+    T RandomItem<T>(T[] list) => list[Random.Range(0, list.Length)];
+
+    public void PlayMedium()
+    {
+        var clip = RandomItem(medium);
+        PlaySFX(clip);
+    }
+    public void PlayPleased()
+    {
+        var clip = RandomItem(pleased);
+        PlaySFX(clip);
+    }
+
 
     public void PlayScribble()
     {
