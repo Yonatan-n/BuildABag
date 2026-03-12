@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BagManager : Singleton<BagManager>
+public class BagManager : SingletonPerScene<BagManager>
 {
     [SerializeField] Image layer0;
     [SerializeField] Image layer1;
@@ -64,11 +64,17 @@ public class BagManager : Singleton<BagManager>
         layer2.color = Color.white;
     }
 
-    void Start()
+    void OnEnable()
     {
         Left.onClick.AddListener(Previous);
         Right.onClick.AddListener(Next);
         SetLayers();
+    }
+
+    void OnDisable()
+    {
+        Left.onClick.RemoveListener(Previous);
+        Right.onClick.RemoveListener(Next);
     }
 
 }

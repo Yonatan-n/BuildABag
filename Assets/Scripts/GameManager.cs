@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class GameManager : SingletonPerScene<GameManager>
     OrderRequest currentOrderRequest;
     int orderRequestIndex = 0;
     public bool GameOver = false;
+    bool isFirstOrder = true;
 
     void Init()
     {
@@ -94,9 +96,92 @@ public class GameManager : SingletonPerScene<GameManager>
 
     void SetNoteText()
     {
-        NoteCustomer.text = $"Customer: {currentOrderRequest.customerName}";
-        NoteTheme.text = $"Theme: {currentOrderRequest.theme}";
-        NoteLike.text = $"Loves: {currentOrderRequest.LoveText}";
-        NoteHate.text = $"Hates: {currentOrderRequest.HateText}";
+        if (isFirstOrder)
+        {
+            NoteCustomer.text = "";
+            NoteTheme.text = "";
+            NoteLike.text = "";
+            NoteHate.text = "";
+            StartCoroutine(TypeAllRoutine());
+            isFirstOrder = false;
+        }
+        else
+        {
+            StartCoroutine(StrikeThenTypeAll());
+        }
+    }
+
+    IEnumerator TypeAllRoutine()
+    {
+        yield return TypeRoutine(NoteCustomer, $"Customer: {currentOrderRequest.customerName}");
+        yield return TypeRoutine(NoteTheme, $"Theme: {currentOrderRequest.theme}");
+        yield return TypeRoutine(NoteLike, $"Loves: {currentOrderRequest.LoveText}");
+        yield return TypeRoutine(NoteHate, $"Hates: {currentOrderRequest.HateText}");
+    }
+
+    IEnumerator StrikeAllRoutine()
+    {
+        yield return StrikeRoutine(NoteCustomer);
+        yield return StrikeRoutine(NoteTheme);
+        yield return StrikeRoutine(NoteLike);
+        yield return StrikeRoutine(NoteHate);
+    }
+    IEnumerator TypeRoutine(TextMeshProUGUI textComponent, string fullText)
+    {
+        textComponent.text = fullText; // set full text first
+        textComponent.maxVisibleCharacters = 0;
+
+        for (int i = 0; i <= fullText.Length; i++)
+        {
+            var delay = Random.Range(0.02f, 0.08f);
+            textComponent.maxVisibleCharacters = i;
+            yield return new WaitForSeconds(delay);
+        }
+        yield return null;
+    }
+
+    IEnumerator StrikeRoutine(TMP_Text textComponent)
+    {
+        string original = textComponent.text;
+
+        for (int i = 1; i <= original.Length; i++)
+        {
+            string struck = original.Substring(0, i);
+            string rest = original.Substring(i);
+            textComponent.text = $"<s>{struck}</s>{rest}";
+            yield return new WaitForSeconds(0.03f);
+        }
+    }
+    IEnumerator StrikeThenTypeAll()
+    {
+        yield return StrikeAllRoutine();
+        yield return FadeAllRoutine();
+        yield return TypeAllRoutine();
+    }
+
+    IEnumerator FadeAllRoutine()
+    {
+        yield return FadeRoutine(NoteCustomer);
+        yield return FadeRoutine(NoteTheme);
+        yield return FadeRoutine(NoteLike);
+        yield return FadeRoutine(NoteHate);
+    }
+
+    IEnumerator FadeRoutine(TMP_Text textComponent)
+    {
+        float duration = 0.4f;
+        float elapsed = 0f;
+        Color original = textComponent.color;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+            textComponent.color = new Color(original.r, original.g, original.b, alpha);
+            yield return null;
+        }
+
+        textComponent.text = "";
+        textComponent.color = original; // reset alpha for typing
     }
 }
