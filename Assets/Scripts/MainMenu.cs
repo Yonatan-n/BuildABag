@@ -4,8 +4,10 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public static readonly string level1 = "level1";
     public static readonly string mainMenu = "MainMenu";
+    public static readonly string level1 = "Level1";
+    public static readonly string Completed = "LevelCompleted";
+
 
     [SerializeField] Button Play;
     [SerializeField] Button Options;
@@ -63,14 +65,23 @@ public class MainMenu : MonoBehaviour
 
     static void StartLevel1()
     {
-        AudioManager.Instance.StopMainMenu();
+        AudioManager.Instance.StopTrack();
         LoadScene(level1);
     }
     public static void GoToMainMenu()
     {
+        AudioManager.Instance.StopTrack();
         LoadScene(mainMenu);
     }
-    static void LoadScene(string name)
+
+    public static void GoToCompleted()
+    {
+        AudioManager.Instance.StopTrack();
+        GameManager.Instance.GameOver = true;
+        LoadScene(Completed);
+    }
+
+    static private void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
     }

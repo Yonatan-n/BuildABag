@@ -92,10 +92,13 @@ public class AudioManager : Singleton<AudioManager>
 
     public void Button() => PlaySFX(ButtonPress);
     public void PlaySubmit() => PlaySFX(Submit);
-
+    public void PlayBubble() => PlaySFX(BubblePop);
+    public void PlayLevelEnd() => PlaySFX(LevelEnd);
 
     public void PlayMainMenu() => PlayMusic(mainMenu);
-    public void StopMainMenu()
+
+
+    public void StopTrack()
     {
         StopMusic();
     }
@@ -109,7 +112,6 @@ public class AudioManager : Singleton<AudioManager>
     private void StopMusic()
     {
         musicSource.Stop();
-
     }
 
     private void PlaySFX(AudioClip clip)

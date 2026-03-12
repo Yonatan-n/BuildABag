@@ -20,6 +20,7 @@ public class GameManager : SingletonPerScene<GameManager>
     List<OrderRequest> orderRequests;
     OrderRequest currentOrderRequest;
     int orderRequestIndex = 0;
+    public bool GameOver = false;
 
     void Init()
     {
@@ -53,14 +54,21 @@ public class GameManager : SingletonPerScene<GameManager>
         TotalMoney = 0;
         timerRunning = true;
         GetNewOrder();
-        moneyText.text = $"Money {TotalMoney}$";
-        Submit.onClick.AddListener(SubmitHandler);
+        if (!GameOver)
+        {
+            moneyText.text = $"Money {TotalMoney}$";
+            Submit.onClick.AddListener(SubmitHandler);
+        }
     }
     void GetNewOrder()
     {
+        if (GameOver) { return; }
+
         if (orderRequestIndex >= orderRequests.Count)
         {
-            ConfirmDialog.Show("Completed!", "Back to main menu.", onConfirm: MainMenu.GoToMainMenu, backToMenu: true);
+            GameOver = true;
+            MainMenu.GoToCompleted();
+            // ConfirmDialog.Show("Completed!", "Back to main menu.", onConfirm: MainMenu.GoToMainMenu, backToMenu: true);
             return;
         }
 
@@ -105,20 +113,26 @@ public class GameManager : SingletonPerScene<GameManager>
     }
     void Update()
     {
-        if (timerRunning)
+        if (!GameOver)
         {
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
-            }
-            else
-            {
-                timeRemaining = 0;
-                timerRunning = false;
-                DisplayTime(0);
-                OnTimerEnd();
-            }
+            UpdateTimer();
+        }
+    }
+
+    private void UpdateTimer()
+    {
+        if (!timerRunning) return;
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+            DisplayTime(timeRemaining);
+        }
+        else
+        {
+            timeRemaining = 0;
+            timerRunning = false;
+            DisplayTime(0);
+            OnTimerEnd();
         }
     }
 
