@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 414177130}
   - component: {fileID: 414177129}
   - component: {fileID: 414177128}
+  - component: {fileID: 414177131}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -179,11 +180,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 0.53333336, b: 0.7294118, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.24313726, b: 0.60784316, a: 1}
+    m_PressedColor: {r: 0.8, g: 0.101960786, b: 0.44705883, a: 1}
+    m_SelectedColor: {r: 1, g: 0.53333336, b: 0.7294118, a: 1}
+    m_DisabledColor: {r: 1, g: 0.7411765, b: 0.84313726, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6777188, g: 0, b: 0.87169814, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -240,6 +241,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414177126}
   m_CullTransparentMesh: 1
+--- !u!114 &414177131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414177126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6dcf56cbee7f34684b634eafd1b529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThemedButton
+  theme: {fileID: 11400000, guid: e4be62e3626bd7a49a33436d6b24e812, type: 2}
+  IgnoreBaseColor: 0
 --- !u!1001 &495974374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -977,8 +992,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292306622
-  m_fontColor: {r: 0.74373376, g: 0.3985261, b: 0.8415094, a: 1}
+    rgba: 4290414847
+  m_fontColor: {r: 1, g: 0.53333336, b: 0.7294118, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1428,6 +1443,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.g
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1161160703781702117, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1539,6 +1566,18 @@ PrefabInstance:
     - target: {fileID: 7798407463950507263, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
       propertyPath: m_text
       value: SFX Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.b
+      value: 0.60784316
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.g
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1833,6 +1872,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.g
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1161160703781702117, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1944,6 +1995,18 @@ PrefabInstance:
     - target: {fileID: 7798407463950507263, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
       propertyPath: m_text
       value: Music Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.b
+      value: 0.60784316
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.g
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2068,6 +2131,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.g
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 658844596349335751, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1161160703781702117, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2175,6 +2250,18 @@ PrefabInstance:
     - target: {fileID: 7472463165620471698, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
       propertyPath: m_Name
       value: Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.b
+      value: 0.60784316
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.g
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007751589656123195, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

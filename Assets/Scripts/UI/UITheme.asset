@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a733df9d10e10a43991873a2757bf15, type: 3}
+  m_Name: UITheme
+  m_EditorClassIdentifier: Assembly-CSharp::UITheme
+  buttonNormal: {r: 1, g: 0.53333336, b: 0.7294118, a: 1}
+  buttonHighlight: {r: 1, g: 0.24313726, b: 0.60784316, a: 1}
+  buttonPressed: {r: 0.8, g: 0.101960786, b: 0.44705883, a: 1}
+  buttonDisabled: {r: 1, g: 0.7411765, b: 0.84313726, a: 1}
+  buttonSelected: {r: 1, g: 0.24313726, b: 0.60784316, a: 1}
+  buttonTextColor: {r: 0, g: 0, b: 0, a: 1}
+  PanelBackground: {r: 0, g: 0, b: 0, a: 1}

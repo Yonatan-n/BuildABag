@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6693525715322370968}
   - component: {fileID: 1811230899879615931}
   - component: {fileID: -4456995013994815208}
+  - component: {fileID: 1003350874916207101}
   m_Layer: 5
   m_Name: ButtonUIWide
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6777188, g: 0, b: 0.87169814, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -99,11 +100,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 0.53333336, b: 0.7294118, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.24313726, b: 0.60784316, a: 1}
+    m_PressedColor: {r: 0.8, g: 0.101960786, b: 0.44705883, a: 1}
+    m_SelectedColor: {r: 1, g: 0.24313726, b: 0.60784316, a: 1}
+    m_DisabledColor: {r: 1, g: 0.7411765, b: 0.84313726, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -134,7 +135,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc9d1768983c1042a1a4840b10e927f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSound
-  clickSound: {fileID: 0}
+--- !u!114 &1003350874916207101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4500522308119602635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6dcf56cbee7f34684b634eafd1b529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThemedButton
+  theme: {fileID: 11400000, guid: e4be62e3626bd7a49a33436d6b24e812, type: 2}
+  IgnoreBaseColor: 0
 --- !u!1 &4927432669551203655
 GameObject:
   m_ObjectHideFlags: 0
