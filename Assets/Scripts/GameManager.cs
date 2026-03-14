@@ -136,6 +136,7 @@ public class GameManager : SingletonPerScene<GameManager>
         confettiParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         if (!isFirstOrder) confettiParticles.Play();
         yield return FadeOut(instant: isFirstOrder);
+        BagManager.Instance.LoadNewBagFadedOut();
         // calculate money, load next bag
         if (!isFirstOrder)
         {
