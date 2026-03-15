@@ -135,6 +135,7 @@ public class GameManager : SingletonPerScene<GameManager>
         AudioManager.Instance.PlaySubmit();
         confettiParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         if (!isFirstOrder) confettiParticles.Play();
+        BagManager.Instance.colorPicker.isActive = false;
         yield return FadeOut(instant: isFirstOrder);
         BagManager.Instance.LoadNewBagFadedOut();
         // calculate money, load next bag
@@ -143,7 +144,9 @@ public class GameManager : SingletonPerScene<GameManager>
             CalculateOrderValue();
         }
         yield return GetNewOrder();
+        BagManager.Instance.DeleteAllTrinkets(); // clear for new bag
         yield return FadeIn();
+        BagManager.Instance.colorPicker.isActive = true;
         AudioManager.Instance.PlayBubble();
         SetButtonsInteract(true);
         yield return null;
@@ -214,6 +217,7 @@ public class GameManager : SingletonPerScene<GameManager>
         for (int i = 0; i <= fullText.Length; i++)
         {
             var delay = Random.Range(0.02f, 0.08f);
+            delay = 0.02f;
             textComponent.maxVisibleCharacters = i;
             yield return new WaitForSeconds(delay);
         }

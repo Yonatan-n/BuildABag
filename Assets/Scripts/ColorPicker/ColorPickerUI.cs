@@ -17,6 +17,7 @@ public class ColorPickerUI : MonoBehaviour
     private float _hue, _sat, _val;
     private Texture2D _svTexture;
     private const int TextureSize = 128;
+    public bool isActive;
 
     void Start()
     {
@@ -27,7 +28,6 @@ public class ColorPickerUI : MonoBehaviour
         confirmButton.onClick.AddListener(OnConfirm); // maybe remove
         closeButton.onClick.AddListener(Close); // maybe remove
         svBox.gameObject.AddComponent<SVBoxClickHandler>().OnClick = OnSVBoxClick;
-
         GenerateHueSliderBackground();
         // Set random initial color
         SetRandomColor();
@@ -128,6 +128,7 @@ public class ColorPickerUI : MonoBehaviour
 
     void UpdatePreview()
     {
+        if (!isActive) return;
         var color = Color.HSVToRGB(_hue, _sat, _val);
         colorPreview.color = color;
         hueSlider.handleRect.GetComponent<Image>().color = color;

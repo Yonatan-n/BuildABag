@@ -1,13 +1,14 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BagManager : SingletonPerScene<BagManager>
 {
     [SerializeField] Image layer0;
-    [SerializeField] Image layer1;
-    [SerializeField] Image layer2;
+    [SerializeField] GameObject LayersParent;
+
     [SerializeField] BagCollection collection;
-    [SerializeField] ColorPickerUI colorPicker;
+    public ColorPickerUI colorPicker;
 
     [Header("Buttons")]
     [SerializeField] Button Left;
@@ -15,7 +16,7 @@ public class BagManager : SingletonPerScene<BagManager>
     [SerializeField] Button ResetButton;
     private int _currentIndex = 0;
     private BagVariant _currentVariant;
-
+    public Image[] StickersImages;
     public BagModel CurrentBag => collection.bags[_currentIndex];
     Color ClearWhite = new Color(1f, 1f, 1f, 0f);
 
@@ -28,6 +29,10 @@ public class BagManager : SingletonPerScene<BagManager>
     {
         _currentIndex = Random.Range(0, collection.bags.Count);
         SetLayers(fadedOut: true);
+    }
+    private void FetchStickersImages()
+    {
+        StickersImages = LayersParent.GetComponentsInChildren<Image>().Skip(1).ToArray();
     }
 
     public void Previous()
@@ -42,25 +47,31 @@ public class BagManager : SingletonPerScene<BagManager>
         SetLayers();
     }
 
+    public void DeleteAllTrinkets()
+    {
+        ColorPickerManager.Instance.SelectLayer0(); // reset to bag, workaround to fix but of stickers not fading out correctly if selected
+        if (LayersParent.transform.childCount <= 1) return;
+        // delete all but the first
+        for (int i = LayersParent.transform.childCount - 1; i >= 1; i--)
+        {
+            DestroyImmediate(LayersParent.transform.GetChild(i).gameObject);
+        }
+        // ColorPickerManager.Instance.ClearSelection();
+        FetchStickersImages();
+    }
+
     public void Reset()
     {
         // reset sprites
         layer0.sprite = _currentVariant.baseLayer;
-        layer1.sprite = _currentVariant.accentLayer;
-        layer2.sprite = _currentVariant.zipperLayer;
-
-        // reset colors
         layer0.color = Color.white;
-        layer1.color = Color.white;
-        layer2.color = Color.white;
+        DeleteAllTrinkets();
     }
 
     private void SetLayers(bool fadedOut = false)
     {
         _currentVariant = CurrentBag.variants[0]; // default to first variant
         layer0.sprite = _currentVariant.baseLayer;
-        layer1.sprite = _currentVariant.accentLayer;
-        layer2.sprite = _currentVariant.zipperLayer;
         // reset colors on bag change too
         colorPicker.SetRandomColor();
         if (fadedOut)
@@ -68,13 +79,9 @@ public class BagManager : SingletonPerScene<BagManager>
             var _color = layer0.color;
             _color.a = 0;
             layer0.color = _color;
-            layer1.color = ClearWhite;
-            layer2.color = ClearWhite;
             return;
         }
         // reset trinkets for now
-        layer1.color = Color.white;
-        layer2.color = Color.white;
     }
 
     void OnEnable()
