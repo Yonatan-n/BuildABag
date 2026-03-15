@@ -17,6 +17,14 @@ public class BagManager : SingletonPerScene<BagManager>
     private int _currentIndex = 0;
     public Image[] StickersImages;
     public BagModel CurrentBag => collection.bags[_currentIndex];
+    public Color GetLayer0Color() => layer0.color;
+
+    public ColorablePart[] GetTrinkets()
+    {
+        Debug.Log($"BagManager layer0: {layer0.gameObject.name} | color: #{ColorUtility.ToHtmlStringRGB(layer0.color)}");
+
+        return LayersParent.GetComponentsInChildren<ColorablePart>().Skip(1).ToArray();
+    }
 
     public void Next()
     {

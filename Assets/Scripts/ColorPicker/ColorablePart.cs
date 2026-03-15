@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ColorablePart : MonoBehaviour, IPointerClickHandler
 {
     public string partId;
+    public BagTheme theme;
     private Image _image;
     private Color defaultColor = Color.white;
 

@@ -59,6 +59,8 @@ MonoBehaviour:
   Swoosh: {fileID: 8300000, guid: 28768d570a1fba941b621c002654b630, type: 3}
   BubblePop: {fileID: 8300000, guid: 0047a82f07e0aee42a66b60da6086d44, type: 3}
   TimesUp: {fileID: 8300000, guid: 116bca493a823bf48b66ba2edd8fec08, type: 3}
+  dislike:
+  - {fileID: 8300000, guid: 41f33b7fb34f07247a7904476666c892, type: 3}
   medium:
   - {fileID: 8300000, guid: b794e40a9b72bde4d86b55509f64fed4, type: 3}
   - {fileID: 8300000, guid: 0f8bdf94f8295b946ba23663dae4a74a, type: 3}

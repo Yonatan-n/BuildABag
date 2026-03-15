@@ -5,6 +5,29 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum ColorName
+{
+    Red, Orange, Yellow, Green, Cyan, Blue, Purple, Pink,
+    Black, White, Gray
+}
+
+public struct ColorRange
+{
+    public Vector2 hueRange;
+    public Vector2 satRange; // 0 = grey/white/black, 1 = fully saturated
+    public Vector2 valRange; // 0 = black, 1 = white
+
+    public readonly string ToHex()
+    {
+        float midHue = (hueRange.x + hueRange.y) / 2f;
+        float midSat = (satRange.x + satRange.y) / 2f;
+        float midVal = (valRange.x + valRange.y) / 2f;
+        Color c = Color.HSVToRGB(midHue, midSat, midVal);
+        return "#" + ColorUtility.ToHtmlStringRGB(c);
+    }
+}
+
+
 public class GameManager : SingletonPerScene<GameManager>
 {
 
@@ -32,68 +55,81 @@ public class GameManager : SingletonPerScene<GameManager>
         orderRequests = new List<OrderRequest>()
         {
             // goth
-            new() {
-                theme = BagTheme.Goth,
+            new()
+            {
                 customerName = "Astrid",
-                LoveText = "Metal",
-                HateText="Green and Yellow",
+                loveTheme = BagTheme.Goth,
+                loveColorRange  = ColorRanges.Black,
+                loveFluff = new[] { "death" },
+                hateTheme = null,
+                hateColorRange = ColorRanges.Yellow,
+                hateFluff = new[] { "mornings" },
             },
-            new() {
-                theme = BagTheme.Goth,
-                customerName = "Lilith",
-                LoveText = "Darkness",
-                HateText="Logos and Icons",
-            },
-            new() {
-                theme = BagTheme.Goth,
-                customerName = "Bianca",
-                LoveText = "Skulls",
-                HateText="Pink and Purple",
-            },
-            new() {
-                theme = BagTheme.Goth,
-                customerName = "Elsa",
-                LoveText = "Gray and Blue",
-                HateText="Yellow and Red",
-            },
-            // sportsy
-            new() {
-                theme = BagTheme.Sportsy,
-                customerName = "Katie",
-                LoveText = "Pink and Trinkets",
-                HateText="Skulls, Darkness",
-            },
-            new() {
-                theme = BagTheme.Sportsy,
-                customerName = "Sportina",
-                LoveText = "Blue and Keychains",
-                HateText="Pink and Cigarettes",
-            },
-            new() {
-                theme = BagTheme.Sportsy,
-                customerName = "Rona Marathona",
-                LoveText = "Running. FAST.",
-                HateText="Dark colors",
-            },
-            // Y2K
-            new() {
-                theme = BagTheme.Y2K,
-                customerName = "Britney B.",
-                LoveText = "Bright Colors, random items",
-                HateText="Metal",
-            },
-            new() {
-                theme = BagTheme.Y2K,
-                customerName = "Abril Lebin",
-                LoveText = "Pink and Black",
-                HateText="Green and Yellow",
-            },
-            new() {
-                theme = BagTheme.Y2K,
-                customerName = "Veyonse",
-                LoveText = "Purple",
-                HateText="White and Gray",
-            },
+            // new()
+            // {
+            //     theme = BagTheme.Goth,
+            //     customerName = "Lilith",
+            //     LoveText = "Darkness",
+            //     HateText = "Logos and Icons",
+            // },
+            // new()
+            // {
+            //     theme = BagTheme.Goth,
+            //     customerName = "Bianca",
+            //     LoveText = "Skulls",
+            //     HateText = "Pink and Purple",
+            // },
+            // new()
+            // {
+            //     theme = BagTheme.Goth,
+            //     customerName = "Elsa",
+            //     LoveText = "Gray and Blue",
+            //     HateText = "Yellow and Red",
+            // },
+            // // sportsy
+            // new()
+            // {
+            //     theme = BagTheme.Sportsy,
+            //     customerName = "Katie",
+            //     LoveText = "Pink and Trinkets",
+            //     HateText = "Skulls, Darkness",
+            // },
+            // new()
+            // {
+            //     theme = BagTheme.Sportsy,
+            //     customerName = "Sportina",
+            //     LoveText = "Blue and Keychains",
+            //     HateText = "Pink and Cigarettes",
+            // },
+            // new()
+            // {
+            //     theme = BagTheme.Sportsy,
+            //     customerName = "Rona Marathona",
+            //     LoveText = "Running. FAST.",
+            //     HateText = "Dark colors",
+            // },
+            // // Y2K
+            // new()
+            // {
+            //     theme = BagTheme.Y2K,
+            //     customerName = "Britney B.",
+            //     LoveText = "Bright Colors, random items",
+            //     HateText = "Metal",
+            // },
+            // new()
+            // {
+            //     theme = BagTheme.Y2K,
+            //     customerName = "Abril Lebin",
+            //     LoveText = "Pink and Black",
+            //     HateText = "Green and Yellow",
+            // },
+            // new()
+            // {
+            //     theme = BagTheme.Y2K,
+            //     customerName = "Veyonse",
+            //     LoveText = "Purple",
+            //     HateText = "White and Gray",
+            // },
         };
         // shuffle the list
         orderRequests = orderRequests.OrderBy(_ => Random.Range(0, int.MaxValue)).ToList();
@@ -107,7 +143,7 @@ public class GameManager : SingletonPerScene<GameManager>
     }
     IEnumerator GetNewOrder()
     {
-        if (GameOver) { yield return null; }
+        if (GameOver) { yield break; }
 
         if (orderRequestIndex >= orderRequests.Count)
         {
@@ -115,7 +151,7 @@ public class GameManager : SingletonPerScene<GameManager>
             Score.Instance.BagCount = orderRequests.Count;
             Score.Instance.TotalMoney = TotalMoney;
             MainMenu.GoToCompleted();
-            yield return null;
+            yield break;
         }
 
         currentOrderRequest = orderRequests[orderRequestIndex];
@@ -137,12 +173,12 @@ public class GameManager : SingletonPerScene<GameManager>
         if (!isFirstOrder) confettiParticles.Play();
         BagManager.Instance.colorPicker.isActive = false;
         yield return FadeOut(instant: isFirstOrder);
-        BagManager.Instance.LoadNewBagFadedOut();
         // calculate money, load next bag
         if (!isFirstOrder)
         {
             CalculateOrderValue();
         }
+        BagManager.Instance.LoadNewBagFadedOut();
         yield return GetNewOrder();
         BagManager.Instance.DeleteAllTrinkets(); // clear for new bag
         BagManager.Instance.colorPicker.isActive = true;
@@ -154,25 +190,96 @@ public class GameManager : SingletonPerScene<GameManager>
 
     void CalculateOrderValue()
     {
+        int _money = 0;
         var bag = BagManager.Instance.CurrentBag;
-        if (bag.theme == currentOrderRequest.theme)
+        var order = currentOrderRequest;
+        Debug.Log($"Order: {order.customerName} | loveTheme: {order.loveTheme} | hateTheme: {order.hateTheme}");
+        Debug.Log($"loveColorRange: {order.loveColorRange?.ToHex() ?? "null"} | hateColorRange: {order.hateColorRange?.ToHex() ?? "null"}");
+
+        // Bag theme 
+        if (order.loveTheme.HasValue && bag.theme == order.loveTheme.Value)
+            _money += Random.Range(20, 30);
+
+        if (order.hateTheme.HasValue && bag.theme == order.hateTheme.Value)
+            _money -= Random.Range(8, 15);
+
+        // Bag color
+        Color bagColor = BagManager.Instance.GetLayer0Color();
+        Color.RGBToHSV(bagColor, out float bagHue, out float bagSat, out float bagVal);
+        Debug.Log($"Bag theme: {bag.theme} | Bag HSV: H={bagHue:F2} S={bagSat:F2} V={bagVal:F2}");
+        Debug.Log($"Black range match: {IsInColorRange(bagHue, bagSat, bagVal, ColorRanges.Black)}");
+
+
+        if (order.loveColorRange.HasValue && IsInColorRange(bagHue, bagSat, bagVal, order.loveColorRange.Value))
+            _money += Random.Range(15, 25);
+
+        if (order.hateColorRange.HasValue && IsInColorRange(bagHue, bagSat, bagVal, order.hateColorRange.Value))
+            _money -= Random.Range(5, 15);
+
+        // Trinkets
+        int maxScoredTrinkets = 5;
+        int trinketMoney = 0;
+
+        foreach (var trinket in BagManager.Instance.GetTrinkets().Take(maxScoredTrinkets))
         {
+            // Trinket theme
+            if (order.loveTheme.HasValue && trinket.theme == order.loveTheme.Value)
+                trinketMoney += Random.Range(10, 20);
+
+            else if (order.hateTheme.HasValue && trinket.theme == order.hateTheme.Value)
+                trinketMoney -= Random.Range(3, 9);
+
+            // Trinket color
+            Color.RGBToHSV(trinket.GetColor(), out float h, out float s, out float v);
+
+            if (order.loveColorRange.HasValue && IsInColorRange(h, s, v, order.loveColorRange.Value))
+                trinketMoney += Random.Range(5, 15);
+
+            else if (order.hateColorRange.HasValue && IsInColorRange(h, s, v, order.hateColorRange.Value))
+                trinketMoney -= Random.Range(3, 9);
+        }
+
+        _money += Mathf.Clamp(trinketMoney, -50, 50);
+        _money = Mathf.Max(0, _money); // floor at 0
+
+        if (_money > 80)
             AudioManager.Instance.PlayPleased();
-            TotalMoney += 100;
-        }
-        else
-        {
+        else if (_money > 40)
             AudioManager.Instance.PlayMedium();
-            TotalMoney += 50;
-        }
+        else
+            AudioManager.Instance.PlayDislike();
+
         Invoke(nameof(PlayMoneySFX), 0.8f);
+        TotalMoney += _money;
         moneyText.text = $"Money {TotalMoney}$";
-        // TODO: implement
+    }
+    private bool IsInColorRange(float hue, float sat, float val, ColorRange range)
+    {
+        return hue >= range.hueRange.x && hue <= range.hueRange.y &&
+               sat >= range.satRange.x && sat <= range.satRange.y &&
+               val >= range.valRange.x && val <= range.valRange.y;
     }
     void PlayMoneySFX() => AudioManager.Instance.PlayMoney();
     void Start()
     {
         Init();
+        foreach (var (name, range) in new (string, ColorRange)[]
+{
+    ("Red",    ColorRanges.Red),
+    ("Orange", ColorRanges.Orange),
+    ("Yellow", ColorRanges.Yellow),
+    ("Green",  ColorRanges.Green),
+    ("Cyan",   ColorRanges.Cyan),
+    ("Blue",   ColorRanges.Blue),
+    ("Purple", ColorRanges.Purple),
+    ("Pink",   ColorRanges.Pink),
+    ("Black",  ColorRanges.Black),
+    ("White",  ColorRanges.White),
+    ("Grey",   ColorRanges.Grey),
+})
+        {
+            Debug.Log($"{name}: {range.ToHex()}");
+        }
     }
 
     IEnumerator SetNoteText()
@@ -195,10 +302,11 @@ public class GameManager : SingletonPerScene<GameManager>
     IEnumerator TypeAllRoutine()
     {
         AudioManager.Instance.PlayScribble();
-        yield return TypeRoutine(NoteCustomer, $"Customer: {currentOrderRequest.customerName}");
-        yield return TypeRoutine(NoteTheme, $"Theme: {currentOrderRequest.theme}");
-        yield return TypeRoutine(NoteLike, $"Loves: {currentOrderRequest.LoveText}");
-        yield return TypeRoutine(NoteHate, $"Hates: {currentOrderRequest.HateText}");
+        yield return TypeRoutine(NoteCustomer, currentOrderRequest.GenerateOrderText());
+        // yield return TypeRoutine(NoteCustomer, $"Customer: {currentOrderRequest.customerName}");
+        // yield return TypeRoutine(NoteTheme, $"Theme: {currentOrderRequest.theme}");
+        // yield return TypeRoutine(NoteLike, $"Loves: {currentOrderRequest.LoveText}");
+        // yield return TypeRoutine(NoteHate, $"Hates: {currentOrderRequest.HateText}");
         AudioManager.Instance.StopScribble();
     }
 

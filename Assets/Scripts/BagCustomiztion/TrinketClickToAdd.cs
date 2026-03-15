@@ -5,6 +5,7 @@ public class TrinketClickToAdd : MonoBehaviour
 {
     [SerializeField] GameObject bagParent;
     [SerializeField] GameObject TrinketOnBag;
+    [SerializeField] BagTheme theme;
 
     private Button button;
     private Image image;
@@ -32,5 +33,6 @@ public class TrinketClickToAdd : MonoBehaviour
         );
 
         trinket.GetComponent<Image>().sprite = image.sprite;
+        trinket.GetComponent<ColorablePart>().theme = theme;
     }
 }

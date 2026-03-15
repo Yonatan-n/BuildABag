@@ -23,6 +23,7 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioClip TimesUp;
 
     [Header("Voices Clips")]
+    [SerializeField] AudioClip[] dislike;
     [SerializeField] AudioClip[] medium;
     [SerializeField] AudioClip[] pleased;
 
@@ -92,6 +93,12 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayLevelEnd() => PlaySFX(LevelEnd);
     public void PlayMoney() => PlaySFX(CashRegister);
     T RandomItem<T>(T[] list) => list[Random.Range(0, list.Length)];
+
+    public void PlayDislike()
+    {
+        var clip = RandomItem(dislike);
+        PlaySFX(clip);
+    }
 
     public void PlayMedium()
     {
