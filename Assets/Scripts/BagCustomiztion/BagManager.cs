@@ -73,7 +73,8 @@ public class BagManager : SingletonPerScene<BagManager>
         _currentVariant = CurrentBag.variants[0]; // default to first variant
         layer0.sprite = _currentVariant.baseLayer;
         // reset colors on bag change too
-        colorPicker.SetRandomColor();
+        ColorPickerManager.Instance.SelectLayer0WithRandomColor();
+
         if (fadedOut)
         {
             var _color = layer0.color;
@@ -84,11 +85,15 @@ public class BagManager : SingletonPerScene<BagManager>
         // reset trinkets for now
     }
 
+    void Start()
+    {
+        SetLayers();
+    }
+
     void OnEnable()
     {
         Left.onClick.AddListener(Previous);
         Right.onClick.AddListener(Next);
-        SetLayers();
     }
 
     void OnDisable()

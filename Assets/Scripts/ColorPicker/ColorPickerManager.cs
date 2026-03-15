@@ -19,7 +19,6 @@ public class ColorPickerManager : MonoBehaviour
 
     public void SelectPart(ColorablePart part)
     {
-        Debug.Log($"SelectPart: {part.gameObject.name}", part.gameObject);
         SelectedPart = part;
         colorPickerUI.Open(part.GetColor());
     }
@@ -27,7 +26,14 @@ public class ColorPickerManager : MonoBehaviour
     public void ApplyColorToSelected(Color color)
     {
         if (SelectedPart == null) return;
-        Debug.Log($"ApplyColorToSelected called on: {SelectedPart.gameObject.name}", SelectedPart.gameObject);
         SelectedPart.ApplyColor(color);
+    }
+
+    public void SelectLayer0WithRandomColor()
+    {
+        SelectedPart = layer0;
+        Color randomColor = colorPickerUI.GetRandomColor();
+        layer0.ApplyColor(randomColor);
+        colorPickerUI.Open(randomColor);
     }
 }

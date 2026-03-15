@@ -38,10 +38,15 @@ public class ColorPickerUI : MonoBehaviour
         UpdatePreview(); // to set initial values
     }
 
+    public Color GetRandomColor()
+    {
+        // avoids too dark and too brights
+        return Random.ColorHSV(0.2f, 0.9f, 0.2f, 0.9f, 0.2f, 0.9f);
+    }
 
     public void SetRandomColor()
     {
-        Color randomColor = Random.ColorHSV(0.2f, 0.9f, 0.2f, 0.9f, 0.2f, 0.9f); // avoids too dark and too brights
+        var randomColor = GetRandomColor();
         Color.RGBToHSV(randomColor, out _hue, out _sat, out _val);
         hueSlider.value = _hue;
     }
@@ -128,11 +133,11 @@ public class ColorPickerUI : MonoBehaviour
 
     void UpdatePreview()
     {
-        if (!isActive) return;
         var color = Color.HSVToRGB(_hue, _sat, _val);
         colorPreview.color = color;
         hueSlider.handleRect.GetComponent<Image>().color = color;
         hexInput.text = ColorUtility.ToHtmlStringRGB(color);
+        if (!isActive) return;
         ColorPickerManager.Instance.ApplyColorToSelected(color);
     }
 

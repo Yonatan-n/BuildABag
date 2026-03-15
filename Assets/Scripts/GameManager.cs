@@ -145,8 +145,8 @@ public class GameManager : SingletonPerScene<GameManager>
         }
         yield return GetNewOrder();
         BagManager.Instance.DeleteAllTrinkets(); // clear for new bag
-        yield return FadeIn();
         BagManager.Instance.colorPicker.isActive = true;
+        yield return FadeIn();
         AudioManager.Instance.PlayBubble();
         SetButtonsInteract(true);
         yield return null;
