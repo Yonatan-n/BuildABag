@@ -15,5 +15,4 @@ MonoBehaviour:
   bags:
   - {fileID: 11400000, guid: 8ba8d29a4a08c204f83b863f9c613d1f, type: 2}
   - {fileID: 11400000, guid: 49615a1f57c308f41a219f5f1e3d3bed, type: 2}
-  - {fileID: 11400000, guid: a8992586f8d57b34c868309a4a627d9b, type: 2}
   - {fileID: 11400000, guid: 7cc86e4cf9a65674b8e4bb1fb24776d3, type: 2}

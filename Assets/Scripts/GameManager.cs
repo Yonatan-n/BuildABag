@@ -154,8 +154,8 @@ public class GameManager : SingletonPerScene<GameManager>
 
     void CalculateOrderValue()
     {
-        var varient = BagManager.Instance.CurrentBag.variants[0]; // always the first for now
-        if (varient.theme == currentOrderRequest.theme)
+        var bag = BagManager.Instance.CurrentBag;
+        if (bag.theme == currentOrderRequest.theme)
         {
             AudioManager.Instance.PlayPleased();
             TotalMoney += 100;

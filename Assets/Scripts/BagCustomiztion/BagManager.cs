@@ -15,10 +15,8 @@ public class BagManager : SingletonPerScene<BagManager>
     [SerializeField] Button Right;
     [SerializeField] Button ResetButton;
     private int _currentIndex = 0;
-    private BagVariant _currentVariant;
     public Image[] StickersImages;
     public BagModel CurrentBag => collection.bags[_currentIndex];
-    Color ClearWhite = new Color(1f, 1f, 1f, 0f);
 
     public void Next()
     {
@@ -41,12 +39,6 @@ public class BagManager : SingletonPerScene<BagManager>
         SetLayers();
     }
 
-    public void ApplyVariant(BagVariant variant)
-    {
-        _currentVariant = variant;
-        SetLayers();
-    }
-
     public void DeleteAllTrinkets()
     {
         ColorPickerManager.Instance.SelectLayer0(); // reset to bag, workaround to fix but of stickers not fading out correctly if selected
@@ -63,15 +55,14 @@ public class BagManager : SingletonPerScene<BagManager>
     public void Reset()
     {
         // reset sprites
-        layer0.sprite = _currentVariant.baseLayer;
+        layer0.sprite = CurrentBag.image;
         layer0.color = Color.white;
         DeleteAllTrinkets();
     }
 
     private void SetLayers(bool fadedOut = false)
     {
-        _currentVariant = CurrentBag.variants[0]; // default to first variant
-        layer0.sprite = _currentVariant.baseLayer;
+        layer0.sprite = CurrentBag.image;
         // reset colors on bag change too
         ColorPickerManager.Instance.SelectLayer0WithRandomColor();
 
@@ -106,9 +97,9 @@ public class BagManager : SingletonPerScene<BagManager>
 
 
 // TODO:
-// stickers drag and drop
-// get request note
-// submit
-// score
+// DONE stickers drag and drop
+// DONE get request note
+// DONE submit
+// DONE score
 // history
 // next level (new sound, new background, new bags
