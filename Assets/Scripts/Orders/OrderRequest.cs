@@ -44,7 +44,7 @@ public class OrderRequest
         string loveStr = loves.Count > 0 ? $"loves {JoinWithAnd(loves)}" : "";
         string hateStr = hates.Count > 0 ? $"hates {JoinWithAnd(hates)}" : "";
 
-        return $"Customer: {customerName}.\n {loveStr}.\n {hateStr}.".Trim();
+        return $"Customer: {customerName}\n\n{loveStr}\n\n{hateStr}".Trim();
     }
 
     private ColorName ColorRangeToColorName(ColorRange range)

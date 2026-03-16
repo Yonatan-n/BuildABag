@@ -36,9 +36,6 @@ public class GameManager : SingletonPerScene<GameManager>
     [SerializeField] Button Prev;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] TextMeshProUGUI NoteCustomer;
-    [SerializeField] TextMeshProUGUI NoteTheme;
-    [SerializeField] TextMeshProUGUI NoteLike;
-    [SerializeField] TextMeshProUGUI NoteHate;
     [SerializeField] ParticleSystem confettiParticles;
     [SerializeField] GameObject LayersGroup;
 
@@ -54,83 +51,113 @@ public class GameManager : SingletonPerScene<GameManager>
     {
         orderRequests = new List<OrderRequest>()
         {
-            // goth
+            // goth 
             new()
             {
                 customerName = "Astrid",
                 loveTheme = BagTheme.Goth,
-                loveColorRange  = ColorRanges.Black,
-                loveFluff = new[] { "death" },
+                loveColorRange = ColorRanges.Blue,
+                loveFluff = new[] { "death", "ravens" },
                 hateTheme = null,
                 hateColorRange = ColorRanges.Yellow,
                 hateFluff = new[] { "mornings" },
             },
-            // new()
-            // {
-            //     theme = BagTheme.Goth,
-            //     customerName = "Lilith",
-            //     LoveText = "Darkness",
-            //     HateText = "Logos and Icons",
-            // },
-            // new()
-            // {
-            //     theme = BagTheme.Goth,
-            //     customerName = "Bianca",
-            //     LoveText = "Skulls",
-            //     HateText = "Pink and Purple",
-            // },
-            // new()
-            // {
-            //     theme = BagTheme.Goth,
-            //     customerName = "Elsa",
-            //     LoveText = "Gray and Blue",
-            //     HateText = "Yellow and Red",
-            // },
-            // // sportsy
-            // new()
-            // {
-            //     theme = BagTheme.Sportsy,
-            //     customerName = "Katie",
-            //     LoveText = "Pink and Trinkets",
-            //     HateText = "Skulls, Darkness",
-            // },
-            // new()
-            // {
-            //     theme = BagTheme.Sportsy,
-            //     customerName = "Sportina",
-            //     LoveText = "Blue and Keychains",
-            //     HateText = "Pink and Cigarettes",
-            // },
-            // new()
-            // {
-            //     theme = BagTheme.Sportsy,
-            //     customerName = "Rona Marathona",
-            //     LoveText = "Running. FAST.",
-            //     HateText = "Dark colors",
-            // },
-            // // Y2K
-            // new()
-            // {
-            //     theme = BagTheme.Y2K,
-            //     customerName = "Britney B.",
-            //     LoveText = "Bright Colors, random items",
-            //     HateText = "Metal",
-            // },
-            // new()
-            // {
-            //     theme = BagTheme.Y2K,
-            //     customerName = "Abril Lebin",
-            //     LoveText = "Pink and Black",
-            //     HateText = "Green and Yellow",
-            // },
-            // new()
-            // {
-            //     theme = BagTheme.Y2K,
-            //     customerName = "Veyonse",
-            //     LoveText = "Purple",
-            //     HateText = "White and Gray",
-            // },
+            new()
+            {
+                customerName = "Lilith",
+                loveTheme = BagTheme.Goth,
+                loveColorRange = ColorRanges.Purple,
+                loveFluff = new[] { "darkness", "candles" },
+                hateTheme = BagTheme.Girly,
+                hateColorRange = ColorRanges.Green,
+                hateFluff = new[] { "apples", "sheep" },
+            },
+            new()
+            {
+                customerName = "Bianca",
+                loveTheme = BagTheme.Goth,
+                loveColorRange = ColorRanges.Grey,
+                loveFluff = new[] { "skulls", "bones" },
+                hateTheme = BagTheme.Girly,
+                hateColorRange = ColorRanges.Pink,
+                hateFluff = new[] { "glitter", "rainbows" },
+            },
+            new()
+            {
+                customerName = "Elsa",
+                loveTheme = BagTheme.Goth,
+                loveColorRange = ColorRanges.Blue,
+                loveFluff = new[] { "moonlight", "ice" },
+                hateTheme = null,
+                hateColorRange = ColorRanges.Yellow,
+                hateFluff = new[] { "sunshine", "summer" },
+            },
+
+            // sportsy
+            new()
+            {
+                customerName = "Katie",
+                loveTheme = BagTheme.Sportsy,
+                loveColorRange = ColorRanges.Pink,
+                loveFluff = new[] { "trophies", "energy drinks" },
+                hateTheme = BagTheme.Goth,
+                hateColorRange = ColorRanges.Black,
+                hateFluff = new[] { "skulls", "darkness" },
+            },
+            new()
+            {
+                customerName = "Sportina",
+                loveTheme = BagTheme.Sportsy,
+                loveColorRange = ColorRanges.Blue,
+                loveFluff = new[] { "mornings", "sprinting" },
+                hateTheme = BagTheme.Goth,
+                hateColorRange = ColorRanges.Orange,
+                hateFluff = new[] { "cigarettes", "slow walks" },
+            },
+            new()
+            {
+                customerName = "Rona Marathona",
+                loveTheme = BagTheme.Sportsy,
+                loveColorRange = ColorRanges.Orange,
+                loveFluff = new[] { "running", "protein shakes" },
+                hateTheme = BagTheme.Goth,
+                hateColorRange = ColorRanges.Black,
+                hateFluff = new[] { "elevators" },
+            },
+
+            // Y2K
+            new()
+            {
+                customerName = "Britney B.",
+                loveTheme = BagTheme.Y2K,
+                loveColorRange = ColorRanges.Cyan,
+                loveFluff = new[] { "flip phones" },
+                hateTheme = BagTheme.Goth,
+                hateColorRange = ColorRanges.Black,
+                hateFluff = new[] { "metal", "darkness" },
+            },
+            new()
+            {
+                customerName = "Abril Lebin",
+                loveTheme = BagTheme.Y2K,
+                loveColorRange = ColorRanges.Pink,
+                loveFluff = new[] { "low rise" },
+                hateTheme = null,
+                hateColorRange = ColorRanges.Green,
+                hateFluff = new[] { "cargo pants" },
+            },
+            new()
+            {
+                customerName = "Veyonse",
+                loveTheme = BagTheme.Y2K,
+                loveColorRange = ColorRanges.Purple,
+                loveFluff = new[] { "cloths", "jacuzzi"},
+                hateTheme = BagTheme.Sportsy,
+                hateColorRange = ColorRanges.White,
+                hateFluff = new[] { "cheap shampoo", "minimalism" },
+            },
         };
+
         // shuffle the list
         orderRequests = orderRequests.OrderBy(_ => Random.Range(0, int.MaxValue)).ToList();
         TotalMoney = 0;
@@ -287,9 +314,6 @@ public class GameManager : SingletonPerScene<GameManager>
         if (isFirstOrder)
         {
             NoteCustomer.text = "";
-            NoteTheme.text = "";
-            NoteLike.text = "";
-            NoteHate.text = "";
             isFirstOrder = false;
             return TypeAllRoutine();
         }
@@ -303,19 +327,12 @@ public class GameManager : SingletonPerScene<GameManager>
     {
         AudioManager.Instance.PlayScribble();
         yield return TypeRoutine(NoteCustomer, currentOrderRequest.GenerateOrderText());
-        // yield return TypeRoutine(NoteCustomer, $"Customer: {currentOrderRequest.customerName}");
-        // yield return TypeRoutine(NoteTheme, $"Theme: {currentOrderRequest.theme}");
-        // yield return TypeRoutine(NoteLike, $"Loves: {currentOrderRequest.LoveText}");
-        // yield return TypeRoutine(NoteHate, $"Hates: {currentOrderRequest.HateText}");
         AudioManager.Instance.StopScribble();
     }
 
     IEnumerator StrikeAllRoutine()
     {
         yield return StrikeRoutine(NoteCustomer);
-        yield return StrikeRoutine(NoteTheme);
-        yield return StrikeRoutine(NoteLike);
-        yield return StrikeRoutine(NoteHate);
     }
     IEnumerator TypeRoutine(TextMeshProUGUI textComponent, string fullText)
     {
@@ -354,9 +371,6 @@ public class GameManager : SingletonPerScene<GameManager>
     IEnumerator FadeAllRoutine()
     {
         yield return FadeRoutine(NoteCustomer);
-        yield return FadeRoutine(NoteTheme);
-        yield return FadeRoutine(NoteLike);
-        yield return FadeRoutine(NoteHate);
     }
 
     IEnumerator FadeRoutine(TMP_Text textComponent)

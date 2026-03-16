@@ -3,11 +3,9 @@ using UnityEngine.UI;
 
 public class SelectBagLayer : MonoBehaviour
 {
-    [SerializeField] Button layer0;
     [SerializeField] Button reset;
     void Start()
     {
-        layer0.onClick.AddListener(ColorPickerManager.Instance.SelectLayer0);
         reset.onClick.AddListener(OnResetButtonClicked);
         // set to layer0 on start
         ColorPickerManager.Instance.SelectLayer0();
