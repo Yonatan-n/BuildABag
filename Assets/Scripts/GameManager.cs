@@ -5,6 +5,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+struct ScoringItem
+{
+    public BagTheme Theme;
+    public Color Color;
+}
+
 public enum ColorName
 {
     Red, Orange, Yellow, Green, Cyan, Blue, Purple, Pink,
@@ -56,40 +62,40 @@ public class GameManager : SingletonPerScene<GameManager>
             {
                 customerName = "Astrid",
                 loveTheme = BagTheme.Goth,
-                loveColorRange = ColorRanges.Blue,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Purple },
                 loveFluff = new[] { "death", "ravens" },
                 hateTheme = null,
-                hateColorRange = ColorRanges.Yellow,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Yellow, ColorRanges.Orange },
                 hateFluff = new[] { "mornings" },
             },
             new()
             {
                 customerName = "Lilith",
                 loveTheme = BagTheme.Goth,
-                loveColorRange = ColorRanges.Purple,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Black },
                 loveFluff = new[] { "darkness", "candles" },
                 hateTheme = BagTheme.Girly,
-                hateColorRange = ColorRanges.Green,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Green, ColorRanges.Red },
                 hateFluff = new[] { "apples", "sheep" },
             },
             new()
             {
                 customerName = "Bianca",
                 loveTheme = BagTheme.Goth,
-                loveColorRange = ColorRanges.Grey,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Grey, },
                 loveFluff = new[] { "skulls", "bones" },
-                hateTheme = BagTheme.Girly,
-                hateColorRange = ColorRanges.Pink,
+                hateTheme = null,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Pink, ColorRanges.Yellow },
                 hateFluff = new[] { "glitter", "rainbows" },
             },
             new()
             {
                 customerName = "Elsa",
                 loveTheme = BagTheme.Goth,
-                loveColorRange = ColorRanges.Blue,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Blue,},
                 loveFluff = new[] { "moonlight", "ice" },
                 hateTheme = null,
-                hateColorRange = ColorRanges.Yellow,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Red},
                 hateFluff = new[] { "sunshine", "summer" },
             },
 
@@ -98,31 +104,31 @@ public class GameManager : SingletonPerScene<GameManager>
             {
                 customerName = "Katie",
                 loveTheme = BagTheme.Sportsy,
-                loveColorRange = ColorRanges.Pink,
-                loveFluff = new[] { "trophies", "energy drinks" },
+                loveColorRanges = new List<ColorRange> { ColorRanges.Pink, ColorRanges.Blue },
+                loveFluff = new[] { "wining", "energy drinks" },
                 hateTheme = BagTheme.Goth,
-                hateColorRange = ColorRanges.Black,
-                hateFluff = new[] { "skulls", "darkness" },
+                hateColorRanges = new List<ColorRange> { ColorRanges.Black, ColorRanges.White },
+                hateFluff = new[] { "losing" },
             },
             new()
             {
                 customerName = "Sportina",
                 loveTheme = BagTheme.Sportsy,
-                loveColorRange = ColorRanges.Blue,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Blue, ColorRanges.Red },
                 loveFluff = new[] { "mornings", "sprinting" },
                 hateTheme = BagTheme.Goth,
-                hateColorRange = ColorRanges.Orange,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Orange, ColorRanges.Green },
                 hateFluff = new[] { "cigarettes", "slow walks" },
             },
             new()
             {
                 customerName = "Rona Marathona",
                 loveTheme = BagTheme.Sportsy,
-                loveColorRange = ColorRanges.Orange,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Orange, ColorRanges.Cyan },
                 loveFluff = new[] { "running", "protein shakes" },
-                hateTheme = BagTheme.Goth,
-                hateColorRange = ColorRanges.Black,
-                hateFluff = new[] { "elevators" },
+                hateTheme = null,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Purple, ColorRanges.Pink },
+                hateFluff = new[] { "elevators", "sittings" },
             },
 
             // Y2K
@@ -130,34 +136,33 @@ public class GameManager : SingletonPerScene<GameManager>
             {
                 customerName = "Britney B.",
                 loveTheme = BagTheme.Y2K,
-                loveColorRange = ColorRanges.Cyan,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Cyan, ColorRanges.Pink },
                 loveFluff = new[] { "flip phones" },
-                hateTheme = BagTheme.Goth,
-                hateColorRange = ColorRanges.Black,
-                hateFluff = new[] { "metal", "darkness" },
+                hateTheme = null,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Grey },
+                hateFluff = new[] { "paparazzi", "mushrooms" },
             },
             new()
             {
                 customerName = "Abril Lebin",
                 loveTheme = BagTheme.Y2K,
-                loveColorRange = ColorRanges.Pink,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Pink, ColorRanges.Blue },
                 loveFluff = new[] { "low rise" },
                 hateTheme = null,
-                hateColorRange = ColorRanges.Green,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Green },
                 hateFluff = new[] { "cargo pants" },
             },
             new()
             {
                 customerName = "Veyonse",
                 loveTheme = BagTheme.Y2K,
-                loveColorRange = ColorRanges.Purple,
-                loveFluff = new[] { "cloths", "jacuzzi"},
+                loveColorRanges = new List<ColorRange> { ColorRanges.Purple },
+                loveFluff = new[] { "expensive wine", "jacuzzi" },
                 hateTheme = BagTheme.Sportsy,
-                hateColorRange = ColorRanges.White,
+                hateColorRanges = new List<ColorRange> { ColorRanges.White },
                 hateFluff = new[] { "cheap shampoo", "minimalism" },
             },
         };
-
         // shuffle the list
         orderRequests = orderRequests.OrderBy(_ => Random.Range(0, int.MaxValue)).ToList();
         TotalMoney = 0;
@@ -214,60 +219,59 @@ public class GameManager : SingletonPerScene<GameManager>
         SetButtonsInteract(true);
         yield return null;
     }
+    private int ScoreItem(ScoringItem item, OrderRequest order,
+        (int min, int max) loveTheme,
+        (int min, int max) hateTheme,
+        (int min, int max) loveColor,
+        (int min, int max) hateColor)
+    {
+        int score = 0;
+
+        if (order.loveTheme.HasValue && item.Theme == order.loveTheme.Value)
+            score += Random.Range(loveTheme.min, loveTheme.max);
+
+        if (order.hateTheme.HasValue && item.Theme == order.hateTheme.Value)
+            score -= Random.Range(hateTheme.min, hateTheme.max);
+
+        Color.RGBToHSV(item.Color, out float h, out float s, out float v);
+
+        if (IsInAnyColorRange(h, s, v, order.loveColorRanges))
+            score += Random.Range(loveColor.min, loveColor.max);
+
+        if (IsInAnyColorRange(h, s, v, order.hateColorRanges))
+            score -= Random.Range(hateColor.min, hateColor.max);
+
+        return score;
+    }
 
     void CalculateOrderValue()
     {
         int _money = 0;
-        var bag = BagManager.Instance.CurrentBag;
         var order = currentOrderRequest;
-        Debug.Log($"Order: {order.customerName} | loveTheme: {order.loveTheme} | hateTheme: {order.hateTheme}");
-        Debug.Log($"loveColorRange: {order.loveColorRange?.ToHex() ?? "null"} | hateColorRange: {order.hateColorRange?.ToHex() ?? "null"}");
 
-        // Bag theme 
-        if (order.loveTheme.HasValue && bag.theme == order.loveTheme.Value)
-            _money += Random.Range(20, 30);
-
-        if (order.hateTheme.HasValue && bag.theme == order.hateTheme.Value)
-            _money -= Random.Range(8, 15);
-
-        // Bag color
-        Color bagColor = BagManager.Instance.GetLayer0Color();
-        Color.RGBToHSV(bagColor, out float bagHue, out float bagSat, out float bagVal);
-        Debug.Log($"Bag theme: {bag.theme} | Bag HSV: H={bagHue:F2} S={bagSat:F2} V={bagVal:F2}");
-        Debug.Log($"Black range match: {IsInColorRange(bagHue, bagSat, bagVal, ColorRanges.Black)}");
+        _money += ScoreItem(
+            new ScoringItem { Theme = BagManager.Instance.CurrentBag.theme, Color = BagManager.Instance.GetLayer0Color() },
+            order,
+            loveTheme: (20, 30),
+            hateTheme: (8, 15),
+            loveColor: (15, 25),
+            hateColor: (15, 25));
 
 
-        if (order.loveColorRange.HasValue && IsInColorRange(bagHue, bagSat, bagVal, order.loveColorRange.Value))
-            _money += Random.Range(15, 25);
-
-        if (order.hateColorRange.HasValue && IsInColorRange(bagHue, bagSat, bagVal, order.hateColorRange.Value))
-            _money -= Random.Range(5, 15);
-
-        // Trinkets
-        int maxScoredTrinkets = 5;
         int trinketMoney = 0;
-
-        foreach (var trinket in BagManager.Instance.GetTrinkets().Take(maxScoredTrinkets))
+        foreach (var trinket in BagManager.Instance.GetTrinkets().Take(5))
         {
-            // Trinket theme
-            if (order.loveTheme.HasValue && trinket.theme == order.loveTheme.Value)
-                trinketMoney += Random.Range(10, 20);
-
-            else if (order.hateTheme.HasValue && trinket.theme == order.hateTheme.Value)
-                trinketMoney -= Random.Range(3, 9);
-
-            // Trinket color
-            Color.RGBToHSV(trinket.GetColor(), out float h, out float s, out float v);
-
-            if (order.loveColorRange.HasValue && IsInColorRange(h, s, v, order.loveColorRange.Value))
-                trinketMoney += Random.Range(5, 15);
-
-            else if (order.hateColorRange.HasValue && IsInColorRange(h, s, v, order.hateColorRange.Value))
-                trinketMoney -= Random.Range(3, 9);
+            trinketMoney += ScoreItem(
+                new ScoringItem { Theme = trinket.theme, Color = trinket.GetColor() },
+                order,
+                loveTheme: (10, 20),
+                hateTheme: (3, 9),
+                loveColor: (5, 15),
+                hateColor: (3, 9));
         }
 
         _money += Mathf.Clamp(trinketMoney, -50, 50);
-        _money = Mathf.Max(0, _money); // floor at 0
+        _money = Mathf.Max(1, _money);
 
         if (_money > 80)
             AudioManager.Instance.PlayPleased();
@@ -279,6 +283,11 @@ public class GameManager : SingletonPerScene<GameManager>
         Invoke(nameof(PlayMoneySFX), 0.8f);
         TotalMoney += _money;
         moneyText.text = $"Money {TotalMoney}$";
+    }
+    private bool IsInAnyColorRange(float h, float s, float v, List<ColorRange> ranges)
+    {
+        if (ranges == null) return false;
+        return ranges.Any(range => IsInColorRange(h, s, v, range));
     }
     private bool IsInColorRange(float hue, float sat, float val, ColorRange range)
     {

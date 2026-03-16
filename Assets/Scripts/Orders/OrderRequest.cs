@@ -13,8 +13,8 @@ public class OrderRequest
     public BagTheme? loveTheme;
     public BagTheme? hateTheme;
 
-    public ColorRange? loveColorRange;
-    public ColorRange? hateColorRange;
+    public List<ColorRange> loveColorRanges;
+    public List<ColorRange> hateColorRanges;
 
     // Fluff are display only, no effect
     public string[] loveFluff;  // "death", "chocolate"
@@ -34,11 +34,17 @@ public class OrderRequest
         var hates = new List<string>();
 
         if (loveTheme.HasValue) loves.Add(loveTheme.Value.ToString());
-        if (loveColorRange.HasValue) loves.Add(ColorRangeToColorName(loveColorRange.Value).ToString());
-        if (loveFluff != null) loves.AddRange(loveFluff);
-
         if (hateTheme.HasValue) hates.Add(hateTheme.Value.ToString());
-        if (hateColorRange.HasValue) hates.Add(ColorRangeToColorName(hateColorRange.Value).ToString());
+
+        if (loveColorRanges != null)
+            foreach (var r in loveColorRanges)
+                loves.Add(ColorRangeToColorName(r).ToString());
+
+        if (hateColorRanges != null)
+            foreach (var r in hateColorRanges)
+                hates.Add(ColorRangeToColorName(r).ToString());
+
+        if (loveFluff != null) loves.AddRange(loveFluff);
         if (hateFluff != null) hates.AddRange(hateFluff);
 
         string loveStr = loves.Count > 0 ? $"loves {JoinWithAnd(loves)}" : "";
