@@ -351,7 +351,6 @@ public class GameManager : SingletonPerScene<GameManager>
         for (int i = 0; i <= fullText.Length; i++)
         {
             var delay = Random.Range(0.02f, 0.08f);
-            delay = 0.02f;
             textComponent.maxVisibleCharacters = i;
             yield return new WaitForSeconds(delay);
         }
