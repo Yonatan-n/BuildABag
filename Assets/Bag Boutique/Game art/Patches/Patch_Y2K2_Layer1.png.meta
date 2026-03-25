@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: a6dc45d1ed89ce641ad78048eb618fa9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8929355236084413820
+    second: Patch_Y2K2_Layer1_0
+  - first:
+      213: -4191522092080426776
+    second: Patch_Y2K2_Layer1_1
+  - first:
+      213: 9140681785166180375
+    second: Patch_Y2K2_Layer1_2
+  - first:
+      213: -2202577362093498615
+    second: Patch_Y2K2_Layer1_3
+  - first:
+      213: 7765901185110446676
+    second: Patch_Y2K2_Layer1_4
+  - first:
+      213: -6797598285049763081
+    second: Patch_Y2K2_Layer1_5
+  - first:
+      213: -4373208009194734714
+    second: Patch_Y2K2_Layer1_6
+  - first:
+      213: 4770706564786567242
+    second: Patch_Y2K2_Layer1_7
+  - first:
+      213: -6428871921562670793
+    second: Patch_Y2K2_Layer1_8
+  - first:
+      213: 2495374774940767855
+    second: Patch_Y2K2_Layer1_9
+  - first:
+      213: 2212419722531620328
+    second: Patch_Y2K2_Layer1_10
+  - first:
+      213: -2213160301951271671
+    second: Patch_Y2K2_Layer1_11
+  - first:
+      213: -7193080802139194715
+    second: Patch_Y2K2_Layer1_12
+  - first:
+      213: -6494733479254197723
+    second: Patch_Y2K2_Layer1_13
+  - first:
+      213: 4306237872190317421
+    second: Patch_Y2K2_Layer1_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_0
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 400
+        width: 42
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a0ae7f8be841480800000000000000
+      internalID: -8929355236084413820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_1
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 423
+        width: 41
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e018596dd8b4d5c0800000000000000
+      internalID: -4191522092080426776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 422
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710b6b977a93ade70800000000000000
+      internalID: 9140681785166180375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 69
+        width: 348
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f99161f8fde61e0800000000000000
+      internalID: -2202577362093498615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 400
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4521b4b7bf506cb60800000000000000
+      internalID: 7765901185110446676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_5
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 261
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7faedcdff541aa1a0800000000000000
+      internalID: -6797598285049763081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_6
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 288
+        width: 19
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68bfd036c7e3f43c0800000000000000
+      internalID: -4373208009194734714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_7
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 211
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a483ab92854f43240800000000000000
+      internalID: 4770706564786567242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_8
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 238
+        width: 12
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73926c88c0f08c6a0800000000000000
+      internalID: -6428871921562670793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 156
+        width: 21
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6690d1032a51a220800000000000000
+      internalID: 2495374774940767855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_10
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 192
+        width: 14
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5c097040814be10800000000000000
+      internalID: 2212419722531620328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_11
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 159
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90db2336e664941e0800000000000000
+      internalID: -2213160301951271671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 61
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aabfcbfe1b0d2c90800000000000000
+      internalID: -7193080802139194715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_13
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 59
+        width: 40
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a773aaf421ed5a0800000000000000
+      internalID: -6494733479254197723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patch_Y2K2_Layer1_14
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 65
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63ec328784d2cb30800000000000000
+      internalID: 4306237872190317421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Patch_Y2K2_Layer1_0: -8929355236084413820
+      Patch_Y2K2_Layer1_1: -4191522092080426776
+      Patch_Y2K2_Layer1_10: 2212419722531620328
+      Patch_Y2K2_Layer1_11: -2213160301951271671
+      Patch_Y2K2_Layer1_12: -7193080802139194715
+      Patch_Y2K2_Layer1_13: -6494733479254197723
+      Patch_Y2K2_Layer1_14: 4306237872190317421
+      Patch_Y2K2_Layer1_2: 9140681785166180375
+      Patch_Y2K2_Layer1_3: -2202577362093498615
+      Patch_Y2K2_Layer1_4: 7765901185110446676
+      Patch_Y2K2_Layer1_5: -6797598285049763081
+      Patch_Y2K2_Layer1_6: -4373208009194734714
+      Patch_Y2K2_Layer1_7: 4770706564786567242
+      Patch_Y2K2_Layer1_8: -6428871921562670793
+      Patch_Y2K2_Layer1_9: 2495374774940767855
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

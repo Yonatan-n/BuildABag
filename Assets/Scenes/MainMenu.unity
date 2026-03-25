@@ -679,19 +679,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814252640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8428149, y: 0.8428149, z: 0.88495576}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 495974375}
   - {fileID: 1769636273}
   - {fileID: 1380524547}
-  m_Father: {fileID: 841000538}
+  m_Father: {fileID: 1085722039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 100}
+  m_AnchoredPosition: {x: 695, y: -128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &814252642
@@ -714,8 +714,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 500, y: 200}
-  m_Spacing: {x: 0, y: 20}
+  m_CellSize: {x: 500, y: 110}
+  m_Spacing: {x: 0, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &841000534
@@ -814,7 +814,6 @@ RectTransform:
   m_Children:
   - {fileID: 1262975088}
   - {fileID: 1214402903}
-  - {fileID: 814252641}
   - {fileID: 1647089229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -879,6 +878,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7472463165620471698, guid: 719a6ed5ab5329e4b8d818e06bfa6255, type: 3}
   m_PrefabInstance: {fileID: 1478614941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1085722039 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4512557426986734780, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
+  m_PrefabInstance: {fileID: 1262975087}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214402902
 GameObject:
@@ -946,8 +950,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290414847
-  m_fontColor: {r: 1, g: 0.53333336, b: 0.7294118, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1166,6 +1170,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 4512557426986734780, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4512557426986734780, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4512557426986734780, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4512557426986734780, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922383295216818024, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 346181748161094574, guid: cd58b925934cd754695218b0fd7b8656, type: 3}
     - target: {fileID: 7277014488705384469, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1248,7 +1272,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4512557426986734780, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 814252641}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78eff5e9d9166a34ca910a858130eaaf, type: 3}
 --- !u!224 &1262975088 stripped

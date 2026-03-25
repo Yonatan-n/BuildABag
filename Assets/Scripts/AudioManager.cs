@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -29,6 +30,10 @@ public class AudioManager : Singleton<AudioManager>
 
     [Header("Music Clips")]
     [SerializeField] AudioClip mainMenu;
+    [SerializeField] AudioClip trackGoth;
+    [SerializeField] AudioClip trackY2K;
+    [SerializeField] AudioClip trackSportsy; // waiting on a real track, placeholder
+    [SerializeField] AudioClip trackGirly; // same as menu
 
     [Header("Audio Sources")]
     [SerializeField] AudioSource musicSource;
@@ -124,6 +129,60 @@ public class AudioManager : Singleton<AudioManager>
         sfxSource.Stop();
     }
 
+    private void TransitionToTrack(AudioClip newClip)
+    {
+        if (musicSource.clip == newClip) return; // already playing
+        StartCoroutine(FadeTransition(newClip));
+    }
+
+    public void TransitionToTrackByTheme(BagTheme theme)
+    {
+        AudioClip clip = theme switch
+        {
+            BagTheme.Goth => trackGoth,
+            BagTheme.Y2K => trackY2K,
+            BagTheme.Girly => trackGirly,
+            BagTheme.Sportsy => trackSportsy,
+            _ => mainMenu
+        };
+        Debug.Log("track change to " + clip);
+        TransitionToTrack(clip);
+    }
+
+    private IEnumerator FadeTransition(AudioClip newClip, float fadeDuration = 1.5f)
+    {
+        float userVolume = MusicVolume;
+        yield return StartCoroutine(Fade(userVolume, 0f, fadeDuration));
+        musicSource.Stop();
+        musicSource.clip = newClip;
+        musicSource.loop = true;
+        // Ensure mixer is at silence before we start fade-in
+        mixer.SetFloat(MusicVolumeParam, -80f);
+        musicSource.Play();
+        yield return StartCoroutine(Fade(0f, userVolume, fadeDuration));
+    }
+
+    private float volumeToDB(float volume)
+    {
+        return volume <= 0.0001f ? -80f : Mathf.Log10(volume) * 20f;
+    }
+
+    private IEnumerator Fade(float from, float to, float duration)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float linear = Mathf.Lerp(from, to, elapsed / duration);
+            // Convert to dB for the mixer
+            float dB = volumeToDB(linear);
+            mixer.SetFloat(MusicVolumeParam, dB);
+            yield return null;
+        }
+        // Ensure we land exactly on target
+        float finaldB = volumeToDB(to);
+        mixer.SetFloat(MusicVolumeParam, finaldB);
+    }
 
     public void PlayMainMenu() => PlayMusic(mainMenu);
 
@@ -154,7 +213,7 @@ public class AudioManager : Singleton<AudioManager>
 
     private void SetMixerVolume(string parameter, float volume)
     {
-        float dB = volume <= 0.0001f ? -80f : Mathf.Log10(volume) * 20f;
+        float dB = volumeToDB(volume);
         mixer.SetFloat(parameter, dB);
         bool success = mixer.GetFloat(parameter, out float val);
         Debug.Log($"{parameter} current dB: {val} | SetFloat success? {success}");

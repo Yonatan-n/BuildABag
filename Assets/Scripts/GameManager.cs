@@ -57,6 +57,16 @@ public class GameManager : SingletonPerScene<GameManager>
     {
         orderRequests = new List<OrderRequest>()
         {
+            new()
+            {
+                customerName = "Veyonse",
+                loveTheme = BagTheme.Y2K,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Purple },
+                loveFluff = new[] { "expensive wine", "jacuzzi" },
+                hateTheme = BagTheme.Sportsy,
+                hateColorRanges = new List<ColorRange> { ColorRanges.White },
+                hateFluff = new[] { "cheap shampoo", "minimalism" },
+            },
             // goth 
             new()
             {
@@ -78,60 +88,7 @@ public class GameManager : SingletonPerScene<GameManager>
                 hateColorRanges = new List<ColorRange> { ColorRanges.Green, ColorRanges.Red },
                 hateFluff = new[] { "apples", "sheep" },
             },
-            new()
-            {
-                customerName = "Bianca",
-                loveTheme = BagTheme.Goth,
-                loveColorRanges = new List<ColorRange> { ColorRanges.Grey, },
-                loveFluff = new[] { "skulls", "bones" },
-                hateTheme = null,
-                hateColorRanges = new List<ColorRange> { ColorRanges.Pink, ColorRanges.Yellow },
-                hateFluff = new[] { "glitter", "rainbows" },
-            },
-            new()
-            {
-                customerName = "Elsa",
-                loveTheme = BagTheme.Goth,
-                loveColorRanges = new List<ColorRange> { ColorRanges.Blue,},
-                loveFluff = new[] { "moonlight", "ice" },
-                hateTheme = null,
-                hateColorRanges = new List<ColorRange> { ColorRanges.Red},
-                hateFluff = new[] { "sunshine", "summer" },
-            },
-
-            // sportsy
-            new()
-            {
-                customerName = "Katie",
-                loveTheme = BagTheme.Sportsy,
-                loveColorRanges = new List<ColorRange> { ColorRanges.Pink, ColorRanges.Blue },
-                loveFluff = new[] { "wining", "energy drinks" },
-                hateTheme = BagTheme.Goth,
-                hateColorRanges = new List<ColorRange> { ColorRanges.Black, ColorRanges.White },
-                hateFluff = new[] { "losing" },
-            },
-            new()
-            {
-                customerName = "Sportina",
-                loveTheme = BagTheme.Sportsy,
-                loveColorRanges = new List<ColorRange> { ColorRanges.Blue, ColorRanges.Red },
-                loveFluff = new[] { "mornings", "sprinting" },
-                hateTheme = BagTheme.Goth,
-                hateColorRanges = new List<ColorRange> { ColorRanges.Orange, ColorRanges.Green },
-                hateFluff = new[] { "cigarettes", "slow walks" },
-            },
-            new()
-            {
-                customerName = "Rona Marathona",
-                loveTheme = BagTheme.Sportsy,
-                loveColorRanges = new List<ColorRange> { ColorRanges.Orange, ColorRanges.Cyan },
-                loveFluff = new[] { "running", "protein shakes" },
-                hateTheme = null,
-                hateColorRanges = new List<ColorRange> { ColorRanges.Purple, ColorRanges.Pink },
-                hateFluff = new[] { "elevators", "sittings" },
-            },
-
-            // Y2K
+            // y2k
             new()
             {
                 customerName = "Britney B.",
@@ -152,19 +109,62 @@ public class GameManager : SingletonPerScene<GameManager>
                 hateColorRanges = new List<ColorRange> { ColorRanges.Green },
                 hateFluff = new[] { "cargo pants" },
             },
+            // sportsy
             new()
             {
-                customerName = "Veyonse",
-                loveTheme = BagTheme.Y2K,
-                loveColorRanges = new List<ColorRange> { ColorRanges.Purple },
-                loveFluff = new[] { "expensive wine", "jacuzzi" },
-                hateTheme = BagTheme.Sportsy,
-                hateColorRanges = new List<ColorRange> { ColorRanges.White },
-                hateFluff = new[] { "cheap shampoo", "minimalism" },
+                customerName = "Rona Marathona",
+                loveTheme = BagTheme.Sportsy,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Orange, ColorRanges.Cyan },
+                loveFluff = new[] { "running", "protein shakes" },
+                hateTheme = null,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Purple, ColorRanges.Pink },
+                hateFluff = new[] { "elevators", "sittings" },
+            },
+            new()
+            {
+                customerName = "Katie",
+                loveTheme = BagTheme.Sportsy,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Pink, ColorRanges.Blue },
+                loveFluff = new[] { "wining", "energy drinks" },
+                hateTheme = BagTheme.Goth,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Black, ColorRanges.White },
+                hateFluff = new[] { "losing" },
+            },
+            // goth
+            new()
+            {
+                customerName = "Bianca",
+                loveTheme = BagTheme.Goth,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Grey, },
+                loveFluff = new[] { "skulls", "bones" },
+                hateTheme = null,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Pink, ColorRanges.Yellow },
+                hateFluff = new[] { "glitter", "rainbows" },
+            },
+            new()
+            {
+                customerName = "Elsa",
+                loveTheme = BagTheme.Goth,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Blue,},
+                loveFluff = new[] { "moonlight", "ice" },
+                hateTheme = null,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Red},
+                hateFluff = new[] { "sunshine", "summer" },
+            },
+            // sportsy
+            new()
+            {
+                customerName = "Sportina",
+                loveTheme = BagTheme.Sportsy,
+                loveColorRanges = new List<ColorRange> { ColorRanges.Blue, ColorRanges.Red },
+                loveFluff = new[] { "mornings", "sprinting" },
+                hateTheme = BagTheme.Goth,
+                hateColorRanges = new List<ColorRange> { ColorRanges.Orange, ColorRanges.Green },
+                hateFluff = new[] { "cigarettes", "slow walks" },
             },
         };
         // shuffle the list
-        orderRequests = orderRequests.OrderBy(_ => Random.Range(0, int.MaxValue)).ToList();
+        // orderRequests = orderRequests.OrderBy(_ => Random.Range(0, int.MaxValue)).ToList();
         TotalMoney = 0;
         if (!GameOver)
         {
@@ -187,7 +187,6 @@ public class GameManager : SingletonPerScene<GameManager>
         }
 
         currentOrderRequest = orderRequests[orderRequestIndex];
-        orderRequestIndex++;
         yield return SetNoteText();
     }
 
@@ -197,6 +196,14 @@ public class GameManager : SingletonPerScene<GameManager>
         Next.interactable = value;
         Prev.interactable = value;
     }
+    bool IsThemeChanging()
+    {
+        int current = isFirstOrder ? orderRequestIndex : orderRequestIndex - 1;
+        int next = current + 1;
+        return next < orderRequests.Count &&
+               orderRequests[current].loveTheme != orderRequests[next].loveTheme;
+    }
+
     IEnumerator SubmitHandler()
     {
         SetButtonsInteract(false);
@@ -205,15 +212,18 @@ public class GameManager : SingletonPerScene<GameManager>
         if (!isFirstOrder) confettiParticles.Play();
         BagManager.Instance.colorPicker.isActive = false;
         yield return FadeOut(instant: isFirstOrder);
-        // calculate money, load next bag
+
+        if (!isFirstOrder && IsThemeChanging()) // don't change on first order, check for game over
+            AudioManager.Instance.TransitionToTrackByTheme((BagTheme)orderRequests[orderRequestIndex].loveTheme);
         if (!isFirstOrder)
-        {
             CalculateOrderValue();
-        }
+
         BagManager.Instance.LoadNewBagFadedOut();
         yield return GetNewOrder();
-        BagManager.Instance.DeleteAllTrinkets(); // clear for new bag
+        orderRequestIndex++;
+        BagManager.Instance.DeleteAllTrinkets();
         BagManager.Instance.colorPicker.isActive = true;
+
         yield return FadeIn();
         AudioManager.Instance.PlayBubble();
         SetButtonsInteract(true);

@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127637564d27a324b861fdae1ac25ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  layer0: {fileID: 0}
   reset: {fileID: 1828894889}
 --- !u!1 &124390721
 GameObject:
@@ -12360,6 +12359,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1380928875258282411, guid: 6124304b9e4eb5b489e741b06726fd20, type: 3}
+      propertyPath: trackY2K
+      value: 
+      objectReference: {fileID: 8300000, guid: 757e870e3e9cb544595930ab2b4ed69a, type: 3}
+    - target: {fileID: 1380928875258282411, guid: 6124304b9e4eb5b489e741b06726fd20, type: 3}
+      propertyPath: trackGoth
+      value: 
+      objectReference: {fileID: 8300000, guid: 602d5e5fc4c996b4080bbc1097c789a4, type: 3}
+    - target: {fileID: 1380928875258282411, guid: 6124304b9e4eb5b489e741b06726fd20, type: 3}
+      propertyPath: trackGirly
+      value: 
+      objectReference: {fileID: 8300000, guid: eb0004c0ebfdf954795bff6787d31da3, type: 3}
+    - target: {fileID: 1380928875258282411, guid: 6124304b9e4eb5b489e741b06726fd20, type: 3}
+      propertyPath: trackSportsy
+      value: 
+      objectReference: {fileID: 8300000, guid: eb0004c0ebfdf954795bff6787d31da3, type: 3}
     - target: {fileID: 1671677175533768085, guid: 6124304b9e4eb5b489e741b06726fd20, type: 3}
       propertyPath: m_Name
       value: AudioManager
