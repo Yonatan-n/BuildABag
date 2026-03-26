@@ -306,26 +306,10 @@ public class GameManager : SingletonPerScene<GameManager>
                val >= range.valRange.x && val <= range.valRange.y;
     }
     void PlayMoneySFX() => AudioManager.Instance.PlayMoney();
+
     void Start()
     {
         Init();
-        foreach (var (name, range) in new (string, ColorRange)[]
-{
-    ("Red",    ColorRanges.Red),
-    ("Orange", ColorRanges.Orange),
-    ("Yellow", ColorRanges.Yellow),
-    ("Green",  ColorRanges.Green),
-    ("Cyan",   ColorRanges.Cyan),
-    ("Blue",   ColorRanges.Blue),
-    ("Purple", ColorRanges.Purple),
-    ("Pink",   ColorRanges.Pink),
-    ("Black",  ColorRanges.Black),
-    ("White",  ColorRanges.White),
-    ("Grey",   ColorRanges.Grey),
-})
-        {
-            Debug.Log($"{name}: {range.ToHex()}");
-        }
     }
 
     IEnumerator SetNoteText()
@@ -424,7 +408,7 @@ public class GameManager : SingletonPerScene<GameManager>
             elapsed += Time.deltaTime;
             float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
             foreach (var img in images)
-                img.color = new Color(img.color.r, img.color.g, img.color.b, alpha);
+                img.color = new Color(img.color.r, img.color.g, img.color.b, img.sprite == null ? 0f : alpha);
             yield return null;
         }
     }
@@ -438,7 +422,7 @@ public class GameManager : SingletonPerScene<GameManager>
             elapsed += Time.deltaTime;
             float alpha = Mathf.Lerp(0f, 1f, elapsed / duration);
             foreach (var img in images)
-                img.color = new Color(img.color.r, img.color.g, img.color.b, alpha);
+                img.color = new Color(img.color.r, img.color.g, img.color.b, img.sprite == null ? 0f : alpha);
             yield return null;
         }
     }
