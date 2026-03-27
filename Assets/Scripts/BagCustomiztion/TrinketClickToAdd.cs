@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,10 +39,13 @@ public class TrinketClickToAdd : MonoBehaviour
         targetVisual.colorLayer1.sprite = sourceVisual.colorLayer1.sprite;
         targetVisual.colorLayer2.sprite = sourceVisual.colorLayer2.sprite;
 
-        targetVisual.outline.color = targetVisual.outline.sprite == null ? new Color(1, 1, 1, 0) : Color.white;
         if (targetVisual.colorLayer2.sprite == null)
         {
             targetVisual.colorLayer2.gameObject.SetActive(false);
+        }
+        if (targetVisual.outline.sprite == null)
+        {
+            targetVisual.outline.gameObject.SetActive(false);
         }
 
         // Apply theme to all ColorablePart components on the trinket
