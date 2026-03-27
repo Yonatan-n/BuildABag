@@ -14,7 +14,6 @@ public class ColorPickerManager : MonoBehaviour
     }
     public void SelectLayer0()
     {
-        Debug.Log($"ColorPickerManager layer0: {layer0.gameObject.name} | color: #{ColorUtility.ToHtmlStringRGB(layer0.GetColor())}");
         SelectPart(layer0);
     }
 

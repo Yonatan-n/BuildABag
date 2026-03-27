@@ -129,12 +129,12 @@ TextureImporter:
       name: Keychain_Y2K2_Layer1_0
       rect:
         serializedVersion: 2
-        x: 103
-        y: 91
-        width: 295
-        height: 342
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 31cd8fbf3badcb748a9fcd4d1b4bc59e
     internalID: 0
     vertices: []
     indices: 

@@ -6,15 +6,15 @@ public class TrinketClickToAdd : MonoBehaviour
     [SerializeField] GameObject bagParent;
     [SerializeField] GameObject TrinketOnBag;
     [SerializeField] BagTheme theme;
+    [SerializeField] TrinketVisual sourceVisual;
 
     private Button button;
-    private Image image;
     void Start()
     {
         button = GetComponentInChildren<Button>();
-        image = GetComponentInChildren<Image>();
         button.onClick.AddListener(OnClickHandler);
     }
+
     void OnClickHandler()
     {
         // Get the bag's RectTransform to know its size
@@ -32,7 +32,21 @@ public class TrinketClickToAdd : MonoBehaviour
             Random.Range(-quarterH, quarterH)
         );
 
-        trinket.GetComponent<Image>().sprite = image.sprite;
-        trinket.GetComponent<ColorablePart>().theme = theme;
+        TrinketVisual targetVisual = trinket.GetComponent<TrinketVisual>();
+        targetVisual.outline.sprite = sourceVisual.outline.sprite;
+
+        targetVisual.colorLayer1.sprite = sourceVisual.colorLayer1.sprite;
+        targetVisual.colorLayer2.sprite = sourceVisual.colorLayer2.sprite;
+
+        targetVisual.outline.color = targetVisual.outline.sprite == null ? new Color(1, 1, 1, 0) : Color.white;
+        if (targetVisual.colorLayer2.sprite == null)
+        {
+            targetVisual.colorLayer2.gameObject.SetActive(false);
+        }
+
+        // Apply theme to all ColorablePart components on the trinket
+        foreach (var part in trinket.GetComponentsInChildren<ColorablePart>())
+            part.theme = theme;
+
     }
 }

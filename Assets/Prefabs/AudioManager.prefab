@@ -71,11 +71,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3e0a7fdc0872ba043a1ed9b8189e237d, type: 3}
   - {fileID: 8300000, guid: c9ad1834d40596048bfb65d648ed4cbe, type: 3}
   - {fileID: 8300000, guid: 33532ee2d174b224db31ef7818e561b9, type: 3}
-  mainMenu: {fileID: 8300000, guid: eb0004c0ebfdf954795bff6787d31da3, type: 3}
-  trackGoth: {fileID: 8300000, guid: 602d5e5fc4c996b4080bbc1097c789a4, type: 3}
-  trackY2K: {fileID: 8300000, guid: 757e870e3e9cb544595930ab2b4ed69a, type: 3}
-  trackSportsy: {fileID: 8300000, guid: eb0004c0ebfdf954795bff6787d31da3, type: 3}
-  trackGirly: {fileID: 8300000, guid: eb0004c0ebfdf954795bff6787d31da3, type: 3}
+  mainMenu: {fileID: 8300000, guid: 2679e00674a0a6a4795fec080f28e9ad, type: 3}
+  trackGoth: {fileID: 8300000, guid: 211ddd79494c56942b12c78fd74985a9, type: 3}
+  trackY2K: {fileID: 8300000, guid: fcbf920c05c476d4c964cf07b1ae537d, type: 3}
+  trackSportsy: {fileID: 8300000, guid: aacedc4ae97593f4ab03b9d3bcc08687, type: 3}
+  trackGirly: {fileID: 8300000, guid: 2679e00674a0a6a4795fec080f28e9ad, type: 3}
   musicSource: {fileID: 4883662013325324198}
   sfxSource: {fileID: 3522302306343497767}
   mixer: {fileID: 24100000, guid: a5338f63b498e4041ad9d5187fb897db, type: 2}
