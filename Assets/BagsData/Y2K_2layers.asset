@@ -15,4 +15,5 @@ MonoBehaviour:
   bagName: Y2K
   image: {fileID: 2391274100203797267, guid: ec96f71b372d91549b0c4f810fb72630, type: 3}
   image2: {fileID: -7170839201234490478, guid: 77e1ebe6ddf07b24dbabe4444d681e4c, type: 3}
+  image3: {fileID: 0}
   theme: 3
